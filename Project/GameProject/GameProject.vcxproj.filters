@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Base\Base.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\Player.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\Ball.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\UI.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\Enemy.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\Game01.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game01\GameData.cpp">
+      <Filter>Game01</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\Player.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\Enemy.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\Bullet.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\Effect.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\UI.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game02\GameData.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Game02.cpp">
+      <Filter>Game02</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\AnimData.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Effect.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Enemy.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Field.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Game03.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\GameData.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Goal.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Player.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\Slash.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game03\UI.cpp">
+      <Filter>Game03</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\Player.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\Enemy.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\Game04.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\UI.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\GameData.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\Bullet.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Game04\Map.cpp">
+      <Filter>Game04</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Result.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{92d21a0f-3d8d-4a8b-8c39-31fd384788c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game01">
+      <UniqueIdentifier>{3f01e8b2-9cb0-43f7-a56b-0dde0f51209f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game02">
+      <UniqueIdentifier>{7d36ec04-41d5-408a-9d46-c4a1f0819218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game03">
+      <UniqueIdentifier>{b5368e1e-917a-4b84-a859-6c92009f0d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game04">
+      <UniqueIdentifier>{d472ded7-7260-4925-8ed5-816ccfad677f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{5131662c-7ecd-480b-b861-fe2a6cac31a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base\Base.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\Player.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\Ball.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\UI.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\Enemy.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\Game01.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game01\GameData.h">
+      <Filter>Game01</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\Player.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\Enemy.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\Bullet.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\Effect.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\UI.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game02\GameData.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Player.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Enemy.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\AnimData.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Effect.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Field.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Goal.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Slash.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Game02.h">
+      <Filter>Game02</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\Game03.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\UI.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game03\GameData.h">
+      <Filter>Game03</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\Bullet.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\Enemy.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\Game04.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\GameData.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\Map.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\Player.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Game04\UI.h">
+      <Filter>Game04</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Result.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
