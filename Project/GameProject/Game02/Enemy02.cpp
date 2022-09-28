@@ -1,0 +1,29 @@
+#include "Enemy02.h"
+Enemy::Enemy(const CVector2D& pos) : Base(eType_Enemy) {
+	m_img.Load("Image/Enemy02.png");
+	m_pos = pos;
+	//半径
+	m_rad = 16;
+	//表示サイズ
+	m_img.SetSize(32, 32);
+	//画像の中心に設定
+	m_img.SetCenter(16, 16);
+}
+
+void Enemy::Update() {
+	//敵を下へ
+	const int move_speed = 32;
+	//カウントアップ
+	m_cnt++;
+	if (m_cnt >= 60) {
+		//移動
+		m_pos.y += move_speed;
+		//カウントリセット
+		m_cnt = 0;
+	}
+}
+
+void Enemy::Draw() {
+	m_img.SetPos(m_pos);
+	m_img.Draw();
+}
