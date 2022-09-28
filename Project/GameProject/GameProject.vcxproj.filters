@@ -5,94 +5,94 @@
     <ClCompile Include="Base\Base.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="Game01\Player.cpp">
+    <ClCompile Include="Game01\Player01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
-    <ClCompile Include="Game01\Ball.cpp">
+    <ClCompile Include="Game01\Ball01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
-    <ClCompile Include="Game01\UI.cpp">
+    <ClCompile Include="Game01\UI01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
-    <ClCompile Include="Game01\Enemy.cpp">
+    <ClCompile Include="Game01\Enemy01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
     <ClCompile Include="Game01\Game01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
-    <ClCompile Include="Game01\GameData.cpp">
+    <ClCompile Include="Game01\GameData01.cpp">
       <Filter>Game01</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\Player.cpp">
+    <ClCompile Include="Game02\Player02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\Enemy.cpp">
+    <ClCompile Include="Game02\Enemy02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\Bullet.cpp">
+    <ClCompile Include="Game02\Bullet02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\Effect.cpp">
+    <ClCompile Include="Game02\Effect02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\UI.cpp">
+    <ClCompile Include="Game02\UI02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game02\GameData.cpp">
+    <ClCompile Include="Game02\GameData02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
     <ClCompile Include="Game03\Game02.cpp">
       <Filter>Game02</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\AnimData.cpp">
+    <ClCompile Include="Game03\AnimData03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Effect.cpp">
+    <ClCompile Include="Game03\Effect03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Enemy.cpp">
+    <ClCompile Include="Game03\Enemy03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Field.cpp">
+    <ClCompile Include="Game03\Field03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
     <ClCompile Include="Game03\Game03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\GameData.cpp">
+    <ClCompile Include="Game03\GameData03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Goal.cpp">
+    <ClCompile Include="Game03\Goal03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Player.cpp">
+    <ClCompile Include="Game03\Player03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\Slash.cpp">
+    <ClCompile Include="Game03\Slash03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game03\UI.cpp">
+    <ClCompile Include="Game03\UI03.cpp">
       <Filter>Game03</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\Player.cpp">
+    <ClCompile Include="Game04\Player04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\Enemy.cpp">
+    <ClCompile Include="Game04\Enemy04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
     <ClCompile Include="Game04\Game04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\UI.cpp">
+    <ClCompile Include="Game04\UI04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\GameData.cpp">
+    <ClCompile Include="Game04\GameData04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\Bullet.cpp">
+    <ClCompile Include="Game04\Bullet04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
-    <ClCompile Include="Game04\Map.cpp">
+    <ClCompile Include="Game04\Map04.cpp">
       <Filter>Game04</Filter>
     </ClCompile>
     <ClCompile Include="Title\Title.cpp">
@@ -126,61 +126,61 @@
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="Game01\Player.h">
+    <ClInclude Include="Game01\Player01.h">
       <Filter>Game01</Filter>
     </ClInclude>
-    <ClInclude Include="Game01\Ball.h">
+    <ClInclude Include="Game01\Ball01.h">
       <Filter>Game01</Filter>
     </ClInclude>
-    <ClInclude Include="Game01\UI.h">
+    <ClInclude Include="Game01\UI01.h">
       <Filter>Game01</Filter>
     </ClInclude>
-    <ClInclude Include="Game01\Enemy.h">
+    <ClInclude Include="Game01\Enemy01.h">
       <Filter>Game01</Filter>
     </ClInclude>
     <ClInclude Include="Game01\Game01.h">
       <Filter>Game01</Filter>
     </ClInclude>
-    <ClInclude Include="Game01\GameData.h">
+    <ClInclude Include="Game01\GameData01.h">
       <Filter>Game01</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\Player.h">
+    <ClInclude Include="Game02\Player02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\Enemy.h">
+    <ClInclude Include="Game02\Enemy02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\Bullet.h">
+    <ClInclude Include="Game02\Bullet02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\Effect.h">
+    <ClInclude Include="Game02\Effect02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\UI.h">
+    <ClInclude Include="Game02\UI02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game02\GameData.h">
+    <ClInclude Include="Game02\GameData02.h">
       <Filter>Game02</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Player.h">
+    <ClInclude Include="Game03\Player03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Enemy.h">
+    <ClInclude Include="Game03\Enemy03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\AnimData.h">
+    <ClInclude Include="Game03\AnimData03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Effect.h">
+    <ClInclude Include="Game03\Effect03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Field.h">
+    <ClInclude Include="Game03\Field03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Goal.h">
+    <ClInclude Include="Game03\Goal03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\Slash.h">
+    <ClInclude Include="Game03\Slash03.h">
       <Filter>Game03</Filter>
     </ClInclude>
     <ClInclude Include="Game03\Game02.h">
@@ -189,31 +189,31 @@
     <ClInclude Include="Game03\Game03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\UI.h">
+    <ClInclude Include="Game03\UI03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game03\GameData.h">
+    <ClInclude Include="Game03\GameData03.h">
       <Filter>Game03</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\Bullet.h">
+    <ClInclude Include="Game04\Bullet04.h">
       <Filter>Game04</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\Enemy.h">
+    <ClInclude Include="Game04\Enemy04.h">
       <Filter>Game04</Filter>
     </ClInclude>
     <ClInclude Include="Game04\Game04.h">
       <Filter>Game04</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\GameData.h">
+    <ClInclude Include="Game04\GameData04.h">
       <Filter>Game04</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\Map.h">
+    <ClInclude Include="Game04\Map04.h">
       <Filter>Game04</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\Player.h">
+    <ClInclude Include="Game04\Player04.h">
       <Filter>Game04</Filter>
     </ClInclude>
-    <ClInclude Include="Game04\UI.h">
+    <ClInclude Include="Game04\UI04.h">
       <Filter>Game04</Filter>
     </ClInclude>
     <ClInclude Include="Title\Title.h">
