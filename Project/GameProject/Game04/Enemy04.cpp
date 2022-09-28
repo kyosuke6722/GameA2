@@ -21,10 +21,10 @@ void Enemy::Update()
 
 	if (b) {
 
-		CVector2D yec = b->m_pos - m_pos;
-		m_ang = atan2(vec.x, vec,y);
+		CVector2D vec = b->m_pos - m_pos;
+		m_ang = atan2(vec.x, vec. y);
 		if (m_cnt >= 120) {
-			Base::Add(new Bullet(eType_Enemy_Attack, m_pos, m_ang, 4));
+			Base::Add(new Bullet04(eType_Enemy_Attack, m_pos, m_ang, 4));
 			m_cnt = 0;
 
 		}
