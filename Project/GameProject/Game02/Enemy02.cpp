@@ -1,4 +1,5 @@
 #include "Enemy02.h"
+#include "Bullet02.h"
 Enemy::Enemy(const CVector2D& pos) : Base(eType_Enemy) {
 	m_img.Load("Image/Enemy02.png");
 	m_pos = pos;
@@ -21,6 +22,7 @@ void Enemy::Update() {
 		//カウントリセット
 		m_cnt = 0;
 	}
+	
 }
 
 void Enemy::Draw() {

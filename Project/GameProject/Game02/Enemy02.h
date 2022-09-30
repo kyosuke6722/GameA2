@@ -4,7 +4,7 @@
 class Enemy : public Base {
 public:
 	CImage m_img;
-	CVector2D m_pos;
+	//CVector2D m_pos;
 
 	int m_cnt;
 
