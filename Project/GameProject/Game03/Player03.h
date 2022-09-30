@@ -7,16 +7,18 @@ private:
 		eState_Idle,
 		eState_Attack,
 		eState_Damage,
-		eState_Down
 	};
 	int m_state;//状態変数
 	CImage m_img;
 	bool m_flip;
+	bool m_is_ground;//着地フラグ
+	int m_attack_no;//攻撃番号
+	int m_damage_no;//ダメージ番号
+
 //各状態での挙動
 	void StateIdle();
 	void StateAttack();
 	void StateDamage();
-	void StateDown();
 public:
 	Player03(const CVector2D& pos,bool flip);
 	void Update();
