@@ -4,7 +4,7 @@
 #define SCREEN_HEIGHT 720
 
 #include "Base/Base.h"
-
+#include "Game01/Game01.h"
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -59,8 +59,12 @@ void Init(void)
 	//初期化の命令を書く
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
+	ADD_RESOURCE("Ball01", CImage::CreateImage("Image/Ball2.png"));
+	ADD_RESOURCE("Enemy01", CImage::CreateImage("Image/Bar.png"));
+	ADD_RESOURCE("Player01", CImage::CreateImage("Image/Bar.png"));
 
-
+	Base::Add(new Game01());
+	
 	
 
 
