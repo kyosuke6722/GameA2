@@ -36,5 +36,16 @@ void Bullet::Collision(Base* b) {
 			GameData::s_score += 100;
 		}
 		break;
+
+	case eType_Player:
+		//‰~“¯Žm‚Ì”»’èiA‘ÎÛ‚‚j
+		if (Base::CollisionCircle(this, b)) {
+			//b->SetKill();
+			//SetKill();
+			Base::Add(new Effect(b->m_pos));
+			//GameData::s_score += 100;
+		}
+		break;
+
 	}
 }

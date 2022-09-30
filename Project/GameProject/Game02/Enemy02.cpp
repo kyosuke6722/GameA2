@@ -22,7 +22,10 @@ void Enemy::Update() {
 		//カウントリセット
 		m_cnt = 0;
 	}
-	
+	if (m_cnt >= 40) {
+		Base::Add(new Bullet(m_pos));
+		m_cnt = 0;
+	}
 }
 
 void Enemy::Draw() {

@@ -17,7 +17,11 @@ void Player::Update() {
 		m_pos.x += move_speed;
 	if (HOLD(CInput::eLeft))
 		m_pos.x -= move_speed;
-	if (PUSH(CInput::eButton1)) {
+	if (HOLD(CInput::eUp))
+		m_pos.y -= move_speed;
+	if (HOLD(CInput::eDown))
+		m_pos.y += move_speed;
+	if (PUSH(CInput::eButton5)) {
 		Base::Add(new Bullet(m_pos));
 	}
 }
