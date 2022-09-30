@@ -10,7 +10,7 @@ void UI03::Draw() {
 	for (int i = 0; i < 4; i++,time/10) {
 		int t = time % 10;
 		m_img.SetRect(16*t,16,16*t+16,32);
-		m_
+		
 
 	}
 }

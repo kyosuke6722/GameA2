@@ -2,10 +2,10 @@
 #include "Bullet04.h"
 
 
-Enemy::Enemy(const CVector2D& pos)
+Enemy04::Enemy04(const CVector2D& pos)
 	:Base(eType_Enemy)
 {
-	m_img = COPY_RESOURCE("Enemy", CImage);
+	m_img = COPY_RESOURCE("Enemy04", CImage);
 	m_pos = pos;
 	m_img.SetCenter(16, 16);
 	m_rad = 16;
@@ -13,7 +13,7 @@ Enemy::Enemy(const CVector2D& pos)
 }
 
 
-void Enemy::Update()
+void Enemy04::Update()
 {
 
 	m_cnt++;
@@ -38,13 +38,13 @@ void Enemy::Update()
 
 }
 
-void Enemy::Draw()
+void Enemy04::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
 }
 
-void Enemy::Collision(Base* b)
+void Enemy04::Collision(Base* b)
 {
 }
 

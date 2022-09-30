@@ -17,9 +17,9 @@ void UI01::Draw()
 {
 	int base_x[2] = { 640 - 48.640 + 48 };
 	for (int j = 0; j < 2; j++) {
-		int n = GameData01 :: point[j];
+		int n = GameData01::point[j];
 
-	
+
 		for (int i = 0; i < 2; i++, n /= 10) {
 			int p = n % 10;
 
@@ -30,5 +30,7 @@ void UI01::Draw()
 			m_score.Draw();
 
 		}
+
+	}
 
 }
