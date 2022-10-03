@@ -21,3 +21,7 @@ Game02::Game02() :Base(eType_Scene) {
 void Game02::Update() {
 	m_cnt++;
 }
+
+Game02::~Game02(){
+
+}
