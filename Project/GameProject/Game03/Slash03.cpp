@@ -1,7 +1,7 @@
 #include "Slash03.h"
 
 Slash03::Slash03(const CVector2D& pos, bool flip, int type, int attack_no):Base(type) {
-	m_img = COPY_RESOURCE("Slash03", CImage);//画像複製
+	m_img = COPY_RESOURCE("Slash", CImage);//画像複製
 	m_flip = flip;//反転設定
 	m_pos = pos;//座標設定
 	m_img.SetSize(128,128);//表示サイズ設定

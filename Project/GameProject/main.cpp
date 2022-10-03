@@ -4,7 +4,7 @@
 #define SCREEN_HEIGHT 720
 
 #include "Base/Base.h"
-#include "Game01/Game01.h"
+#include"Title/Title.h"
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -59,13 +59,62 @@ void Init(void)
 	//初期化の命令を書く
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
+	
+	//-----------------------------------------------------
+	//Game共通
+	//-----------------------------------------------------
+	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));//タイム計測用(全ゲーム共通)
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));//シューティングゲームの弾(Game02,Game04)
+
+	//-----------------------------------------------------
+	//Game01(担当:森口)
+	//-----------------------------------------------------
 	ADD_RESOURCE("Ball01", CImage::CreateImage("Image/Ball2.png"));
 	ADD_RESOURCE("Enemy01", CImage::CreateImage("Image/Bar.png"));
 	ADD_RESOURCE("Player01", CImage::CreateImage("Image/Bar.png"));
-	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
 
-	Base::Add(new Game01());
+	//-----------------------------------------------------
+	//Game02(担当:林)
+	//-----------------------------------------------------
+
+
+
+
+
+
+	//-----------------------------------------------------
+	//Game03(担当:小山)
+	//-----------------------------------------------------
+	ADD_RESOURCE("Player03", CImage::CreateImage("Image/Player03.png"));
+	ADD_RESOURCE("Enemy03", CImage::CreateImage("Image/Enemy03.png"));
+	ADD_RESOURCE("Sky", CImage::CreateImage("Image/sky.png"));
+	ADD_RESOURCE("Town", CImage::CreateImage("Image/Town.png"));
+	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image / Goal.png"));
+	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash"));
+	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke"));
+	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood"));
+
+	//-----------------------------------------------------
+	//Game04(担当:森口)
+	//-----------------------------------------------------
+
+
+
+
+
+
+
+	//-----------------------------------------------------
+	//Title(担当:小山)
+	//-----------------------------------------------------
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/sky.png"));
+
+
+
+
+	Base::Add(new Title());
 	
 	
 

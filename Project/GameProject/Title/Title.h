@@ -4,6 +4,7 @@
 class Title :public Base {
 private:
 	CImage m_img;
+	CFont m_title_text;
 public:
 	Title();
 	~Title();
