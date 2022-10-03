@@ -1,12 +1,12 @@
 #include "UI02.h"
 #include "GameData02.h"
 
-UI::UI() :Base(eType_UI) {
+UI02::UI02() :Base(eType_UI) {
 	m_img.Load("Image/UI.png");
 }
 
-void UI::Draw() {
-	int score = GameData::s_score;
+void UI02::Draw() {
+	int score = GameData02::s_score;
 	for (int i = 0; i < 8; i++, score /= 10) {
 		int s = score % 10;
 		m_img.SetRect(16 * s, 16, 16 * s + 16, 32);

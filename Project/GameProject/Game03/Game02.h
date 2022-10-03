@@ -1,8 +1,10 @@
 #pragma once
 #include "../Base/Base.h"
-class Game : public Base {
+class Game02 : public Base {
+private:
+	int m_cnt;
 public:
-	Game();
-	~Game();
+	Game02();
+	~Game02();
 	void Update();
 };

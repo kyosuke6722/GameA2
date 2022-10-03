@@ -1,11 +1,11 @@
 #pragma once
 #include "../Base/Base.h"
-class Player : public Base {
+class Player02 : public Base {
 public:
 	CImage m_img;
 
 public:
-	Player(const CVector2D& pos);
+	Player02(const CVector2D& pos);
 	void Update();
 	void Draw();
 };

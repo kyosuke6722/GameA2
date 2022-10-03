@@ -1,10 +1,10 @@
 #pragma once
 #include"../Base/Base.h"
-class Effect : public Base {
+class Effect02 : public Base {
 private:
 	CImage m_img;
 public:
-	Effect(const CVector2D& pos);
+	Effect02(const CVector2D& pos);
 	void Update();
 	void Draw();
 };

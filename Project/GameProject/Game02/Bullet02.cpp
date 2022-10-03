@@ -2,7 +2,7 @@
 #include "Effect02.h"
 #include "GameData02.h"
 
-Bullet::Bullet(const CVector2D& pos) : Base(eType_Bullet) {
+Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet) {
 	m_img.Load("Image/Bullet.png");
 	m_pos = pos;
 	//半径
@@ -13,27 +13,27 @@ Bullet::Bullet(const CVector2D& pos) : Base(eType_Bullet) {
 	m_img.SetCenter(16, 16);
 }
 
-void Bullet::Update() {
+void Bullet02::Update() {
 	const int move_speed = 4;
 	m_pos.y -= move_speed;
 }
 
-void Bullet::Draw() {
+void Bullet02::Draw() {
 	m_img.SetPos (m_pos);
 	m_img.Draw();
 }
 
-void Bullet::Collision(Base* b) {
+void Bullet02::Collision(Base* b) {
 	//対象のオブジェクトの種類によって分岐
 	switch (b->m_type) {
 		//敵の場合
 	case eType_Enemy:
 		//円同士の判定（自分、対象ｂ）
 		if (Base::CollisionCircle(this, b)) {
-			b->SetKill();
-			SetKill();
-			Base::Add(new Effect(b->m_pos));
-			GameData::s_score += 100;
+			//b->SetKill();
+			//SetKill();
+			Base::Add(new Effect02(b->m_pos));
+			GameData02::s_score += 100;
 		}
 		break;
 
@@ -42,7 +42,7 @@ void Bullet::Collision(Base* b) {
 		if (Base::CollisionCircle(this, b)) {
 			//b->SetKill();
 			//SetKill();
-			Base::Add(new Effect(b->m_pos));
+			Base::Add(new Effect02(b->m_pos));
 			//GameData::s_score += 100;
 		}
 		break;

@@ -1,6 +1,6 @@
 #include "Player02.h"
 #include "Bullet02.h"
-Player::Player(const CVector2D& pos) : Base(eType_Player) {
+Player02::Player02(const CVector2D& pos) : Base(eType_Player) {
 	m_img.Load("Image/Player02.png");
 	m_pos = pos;
 	//îºåaê›íË
@@ -11,7 +11,7 @@ Player::Player(const CVector2D& pos) : Base(eType_Player) {
 	m_img.SetCenter(16, 16);
 }
 
-void Player::Update() {
+void Player02::Update() {
 	const int move_speed = 4;
 	if (HOLD(CInput::eRight))
 		m_pos.x += move_speed;
@@ -22,11 +22,11 @@ void Player::Update() {
 	if (HOLD(CInput::eDown))
 		m_pos.y += move_speed;
 	if (PUSH(CInput::eButton5)) {
-		Base::Add(new Bullet(m_pos));
+		Base::Add(new Bullet02(m_pos));
 	}
 }
 
-void Player::Draw() {
+void Player02::Draw() {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
 }

@@ -6,15 +6,18 @@
 #include "../Game02/UI02.h"
 #include "../Game02/GameData02.h"
 
-Game::Game() :Base(eType_Scene) {
-	Base::Add(new Player(CVector2D(600, 600)));
-	Base::Add(new Enemy(CVector2D(600, 200)));
-	Base::Add(new Enemy(CVector2D(650, 150)));
-	Base::Add(new Enemy(CVector2D(700, 100)));
-	Base::Add(new Enemy(CVector2D(750, 50)));
-	Base::Add(new Enemy(CVector2D(800, 0)));
+Game02::Game02() :Base(eType_Scene) {
+	if (m_cnt >= 180) {
+		Base::Add(new Player02(CVector2D(600, 600)));
+		Base::Add(new Enemy02(CVector2D(600, 200)));
+		Base::Add(new Enemy02(CVector2D(700, 150)));
+		Base::Add(new Enemy02(CVector2D(800, 100)));
+		Base::Add(new Enemy02(CVector2D(900, 50)));
+		Base::Add(new Enemy02(CVector2D(1000, 0)));
+		m_cnt = 0;
+	}
 }
 
-void Game::Update() {
-
+void Game02::Update() {
+	m_cnt++;
 }
