@@ -100,7 +100,12 @@ void Init(void)
 	//-----------------------------------------------------
 	//Game04(íSìñ:êXå˚)
 	//-----------------------------------------------------
-
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player04.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy04.png"));
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
+	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
+	
 
 
 
