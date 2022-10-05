@@ -18,7 +18,7 @@ Game03::~Game03(){
 }
 
 void Game03::Update(){
-	if (Base::FindObject(eType_Goal)) {
+	if (!Base::FindObject(eType_Goal)) {
 		SetKill();
 	}
 	else {

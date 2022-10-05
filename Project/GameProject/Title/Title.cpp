@@ -9,25 +9,27 @@ Title::Title():Base(eType_Scene),m_title_text("C:\\Windows\\Fonts\\msgothic.ttc"
 }
 
 Title::~Title(){
-	Base::KillAll();
-	//Base::Add(new Game01());
 }
 
 void Title::Update(){
 	if (PUSH(CInput::eUp)) {
 		SetKill();
+		Base::KillAll();
 		Base::Add(new Game01());
 	}
 	if (PUSH(CInput::eRight)) {
 		SetKill();
+		Base::KillAll();
 		Base::Add(new Game02());
 	}
 	if (PUSH(CInput::eDown)) {
 		SetKill();
+		Base::KillAll();
 		Base::Add(new Game03());
 	}
 	if (PUSH(CInput::eLeft)) {
 		SetKill();
+		Base::KillAll();
 		Base::Add(new Game04());
 	}
 }

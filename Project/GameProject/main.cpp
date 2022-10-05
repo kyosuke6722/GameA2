@@ -91,10 +91,10 @@ void Init(void)
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/Town.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
-	ADD_RESOURCE("Goal", CImage::CreateImage("Image / Goal.png"));
-	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash"));
-	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke"));
-	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood"));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
+	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash.png"));
+	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png"));
+	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png"));
 
 	//-----------------------------------------------------
 	//Game04(íSìñ:êXå˚)
