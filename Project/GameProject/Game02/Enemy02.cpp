@@ -24,6 +24,7 @@ void Enemy02::Update() {
 	}
 	if (m_cnt >= 40) {
 		Base::Add(new Bullet02(m_pos));
+		m_pos.y += 4;
 	}
 }
 

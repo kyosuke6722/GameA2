@@ -77,10 +77,10 @@ void Init(void)
 	//-----------------------------------------------------
 	//Game02(’S“–:—Ñ)
 	//-----------------------------------------------------
-
-
-
-
+	ADD_RESOURCE("Player02", CImage::CreateImage("Image/Player02.png"));
+	ADD_RESOURCE("Enemy02", CImage::CreateImage("Image/Enemy02.png"));
+	ADD_RESOURCE("Effect02", CImage::CreateImage("Image/Effect_Bomb.png"));
+	
 
 
 	//-----------------------------------------------------

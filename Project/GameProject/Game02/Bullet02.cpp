@@ -14,8 +14,9 @@ Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet) {
 }
 
 void Bullet02::Update() {
-	const int move_speed = 4;
-	m_pos.y -= move_speed;
+	//’e‚Ì‘¬‚³
+	//const int move_speed = 4;
+	//m_pos.y -= move_speed;
 }
 
 void Bullet02::Draw() {
@@ -30,8 +31,8 @@ void Bullet02::Collision(Base* b) {
 	case eType_Enemy:
 		//‰~“¯Žm‚Ì”»’èiŽ©•ªA‘ÎÛ‚‚j
 		if (Base::CollisionCircle(this, b)) {
-			//b->SetKill();
-			//SetKill();
+			b->SetKill();
+			SetKill();
 			Base::Add(new Effect02(b->m_pos));
 			GameData02::s_score += 100;
 		}
@@ -43,7 +44,7 @@ void Bullet02::Collision(Base* b) {
 			//b->SetKill();
 			//SetKill();
 			Base::Add(new Effect02(b->m_pos));
-			//GameData::s_score += 100;
+			//GameData::t_time += 10;
 		}
 		break;
 
