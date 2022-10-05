@@ -7,6 +7,10 @@ Enemy01::Enemy01(const CVector2D& pos):Base(eType_Enemy)
 	
 	if (m_pos.x > 1280) {
 	}
+
+	
+	m_rect = CRect(0, 0, 32, 128);
+
 }
 
 void Enemy01::Update()
@@ -27,5 +31,5 @@ void Enemy01::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
-
+	DrawRect();
 }

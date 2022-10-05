@@ -4,6 +4,10 @@ Player01::Player01(const CVector2D& pos) :Base(eType_Player)
 {
 	m_img = COPY_RESOURCE("Player01", CImage);
 	m_pos = pos;
+
+
+	m_rect = CRect(0,0,32,128);
+
 }
 void Player01::Update()
 {
@@ -32,3 +36,6 @@ void Player01::Draw()
 
 
 }
+
+
+

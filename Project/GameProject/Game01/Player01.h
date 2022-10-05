@@ -8,4 +8,5 @@ public:
 	Player01(const CVector2D& pos);
 	void Update();
 	void Draw();
+	
 };

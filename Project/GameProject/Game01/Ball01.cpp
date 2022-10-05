@@ -7,8 +7,8 @@ Ball01::Ball01(const CVector2D& pos):Base(eType_Ball)
 	m_img.SetSize(32, 32);
 	
 	m_vec = CVector2D(-4, 4);
-
-
+	m_img.SetCenter(16, 16);
+	m_rect = CRect(-16, -16, 16, 16);
 	
 
 }
@@ -37,5 +37,21 @@ void Ball01::Draw()
 	
 
 	
+
+}
+
+void Ball01::Colision(Base* b)
+{
+	switch (b->m_type) {
+	case eType_Player:
+	case eType_Enemy:
+
+	m_vec.x *= -1;
+	m_vec *= 1.1f;
+
+
+	break;
+	}
+
 
 }
