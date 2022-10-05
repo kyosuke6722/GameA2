@@ -4,6 +4,7 @@
 #include"Field03.h"
 #include"Goal03.h"
 #include"GameData03.h"
+#include"../Title/Title.h"
 
 Game03::Game03():Base(eType_Scene){
 	Base::Add(new Field03());
@@ -15,6 +16,8 @@ Game03::Game03():Base(eType_Scene){
 }
 
 Game03::~Game03(){
+	Base::KillAll();
+	Base::Add(new Title());
 }
 
 void Game03::Update(){

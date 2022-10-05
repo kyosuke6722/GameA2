@@ -11,6 +11,8 @@ Enemy03::Enemy03(const CVector2D& pos, bool flip) :Base(eType_Enemy) {
 	m_img.SetCenter(128, 224);//中心位置設定
 	m_rect = CRect(-32,128,32,0);//当たり判定用矩形
 	m_flip = flip;//反転設定
+	m_state = eState_Idle;
+	m_is_ground = true;
 	m_attack_no = rand();
 	m_damage_no = -1;
 	m_hp = 100;
@@ -52,7 +54,7 @@ void Enemy03::Draw(){
 	DrawRect();//当たり判定用矩形表示
 }
 
-void Enemy03::Collision(Base*b){
+void Enemy03::Collision(Base* b) {
 	switch (b->m_type) {
 	case eType_Player_Attack:
 		if (Slash03* s = dynamic_cast<Slash03*>(b)) {

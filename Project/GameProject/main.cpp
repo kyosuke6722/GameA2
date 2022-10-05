@@ -5,6 +5,7 @@
 
 #include "Base/Base.h"
 #include"Title/Title.h"
+#include"Game03/AnimData03.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -86,15 +87,15 @@ void Init(void)
 	//-----------------------------------------------------
 	//Game03(íSìñ:è¨éR)
 	//-----------------------------------------------------
-	ADD_RESOURCE("Player03", CImage::CreateImage("Image/Player03.png"));
-	ADD_RESOURCE("Enemy03", CImage::CreateImage("Image/Enemy03.png"));
+	ADD_RESOURCE("Player03", CImage::CreateImage("Image/Player03.png",player_anim_data,256,256));
+	ADD_RESOURCE("Enemy03", CImage::CreateImage("Image/Enemy03.png",enemy_anim_data,256,256));
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/Town.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
-	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash.png"));
-	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png"));
-	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png"));
+	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash.png",effect_slash_anim_data,128,128));
+	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png",effect_smoke_anim_data,128,128));
+	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png",effect_blood_anim_data,128,128));
 
 	//-----------------------------------------------------
 	//Game04(íSìñ:êXå˚)

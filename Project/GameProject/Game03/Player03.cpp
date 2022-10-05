@@ -12,6 +12,7 @@ Player03::Player03(const CVector2D& pos, bool flip):Base(eType_Player){
 	m_rect = CRect(-32, -128, 32, 0);//当たり判定用矩形
 	m_flip = flip;//反転フラグ
 	m_state = eState_Idle;//初期状態
+	m_is_ground = true;//着地フラグ
 	m_attack_no = rand();//攻撃番号
 	m_damage_no = -1;//ダメージ番号
 }
@@ -68,10 +69,11 @@ void Player03::Collision(Base* b){
 	case eType_Field:
 		if (Field03* f = dynamic_cast<Field03*>(b)) {
 			//地面より下に行ったとき
-			if (m_pos.y > f->GetGroundY())
+			if (m_pos.y > f->GetGroundY()) {
 				m_pos.y = f->GetGroundY();//地面の高さに戻す
-			    m_vec.y = 0;//落下速度リセット
+				m_vec.y = 0;//落下速度リセット
 				m_is_ground = true;//接地フラグON
+			}
 		}
 		break;
 	}
@@ -97,7 +99,7 @@ void Player03::StateIdle(){
 
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
-		m_vec.y=-jump_pow;
+		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
 
