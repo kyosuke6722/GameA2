@@ -4,7 +4,8 @@
 #include"Field03.h"
 #include"Goal03.h"
 #include"GameData03.h"
-#include"../Title/Title.h"
+#include"UI03.h"
+#include"../Title/Result.h"
 
 Game03::Game03():Base(eType_Scene){
 	Base::Add(new Field03());
@@ -12,12 +13,14 @@ Game03::Game03():Base(eType_Scene){
 	Base::Add(new Enemy03(CVector2D(1280 + 256 * 1, 540), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 2, 540), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 3, 540), true));
-	Base::Add(new Goal03(CVector2D(2048, 540)));
+	Base::Add(new Goal03(CVector2D(2048, 540-54)));
+	Base::Add(new UI03());
 }
 
 Game03::~Game03(){
 	Base::KillAll();
-	Base::Add(new Title());
+	Result::finish_game = 3;
+	Base::Add(new Result());
 }
 
 void Game03::Update(){

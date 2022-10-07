@@ -2,7 +2,7 @@
 #include"GameData03.h"
 
 UI03::UI03():Base(eType_UI) {
-	m_img = COPY_RESOURCE("UI03", CImage);
+	m_img = COPY_RESOURCE("UI", CImage);
 }
 
 void UI03::Draw() {
@@ -24,8 +24,11 @@ void UI03::Draw() {
 			t = time / 10;
 		}
 		m_img.SetRect(16 * t, 16, 16 * t + 16, 32);
-		m_img.SetSize(16, 16);
-		m_img.SetPos(200 - 16 * i, 0);
+		m_img.SetSize(24, 24);
+		if (i < 2)
+			m_img.SetPos(100 - 24 * i, 0);
+		else
+			m_img.SetPos(100 - 24 * (i+1), 0);
 		m_img.Draw();
 	}
 }

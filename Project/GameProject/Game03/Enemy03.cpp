@@ -9,9 +9,10 @@ Enemy03::Enemy03(const CVector2D& pos, bool flip) :Base(eType_Enemy) {
 	m_img.ChangeAnimation(0);//再生アニメーション設定
 	m_pos = pos;//座標設定
 	m_img.SetCenter(128, 224);//中心位置設定
-	m_rect = CRect(-32,128,32,0);//当たり判定用矩形
+	m_rect = CRect(-32,-128,32,0);//当たり判定用矩形
 	m_flip = flip;//反転設定
 	m_state = eState_Idle;
+	m_cnt = rand() % 120 + 180;//待機時間3～5秒
 	m_is_ground = true;
 	m_attack_no = rand();
 	m_damage_no = -1;
@@ -36,6 +37,8 @@ void Enemy03::Update(){
 	case eState_Down:
 		StateDown();
 		break;
+	case eState_Wait:
+		StateWait();
 	}
 	if (m_is_ground && m_vec.y > GRAVITY * 4) {
 		m_is_ground = false;
@@ -74,10 +77,11 @@ void Enemy03::Collision(Base* b) {
 	case eType_Field:
 		if (Field03* f = dynamic_cast<Field03*>(b)) {
 			//地面より下に行ったとき
-			if (m_pos.y > f->GetGroundY())
+			if (m_pos.y > f->GetGroundY()) {
 				m_pos.y = f->GetGroundY();//地面の高さに戻す
-			m_vec.y = 0;//落下速度リセット
-			m_is_ground = true;//接地フラグON
+				m_vec.y = 0;//落下速度リセット
+				m_is_ground = true;//接地フラグON
+			}
 		}
 		break;
 	}
@@ -86,7 +90,7 @@ void Enemy03::Collision(Base* b) {
 void Enemy03::StateWait(){
 	m_img.ChangeAnimation(eAnimIdle);
 	if (--m_cnt <= 0) {
-		m_cnt = rand() % 120 + 180;//待機時間3～5秒
+		m_cnt =180;//待機時間3秒
 		m_state = eState_Idle;
 	}
 }
@@ -125,10 +129,12 @@ void Enemy03::StateIdle() {
 		//待機アニメーション
 		m_img.ChangeAnimation(eAnimIdle);
 	}
+	
 	if (--m_cnt <= 0) {
 		m_cnt = rand() % 120 + 180;//待機時間3～5秒
 		m_state = eState_Wait;
 	}
+	
 }
 
 void Enemy03::StateAttack() {

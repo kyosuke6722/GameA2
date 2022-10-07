@@ -1,7 +1,7 @@
 #include "Effect03.h"
 
 Effect03::Effect03(const char* name, const CVector2D& pos, bool flip):Base(eType_Effect) {
-	m_img = COPY_RESOURCE("Effect03", CImage);//画像複製
+	m_img = COPY_RESOURCE(name, CImage);//画像複製
 	m_pos = pos;//座標設定
 	m_img.SetSize(128,128);//表示サイズ設定
 	m_img.SetCenter(64, 64);//中心位置設定

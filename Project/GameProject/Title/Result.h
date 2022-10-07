@@ -7,4 +7,5 @@ public:
 	~Result();
 	void Update();
 	void Draw();
+	static int finish_game;
 };

@@ -3,6 +3,7 @@
 #include"Slash03.h"
 #include"Effect03.h"
 #include"Field03.h"
+#include"GameData03.h"
 
 Player03::Player03(const CVector2D& pos, bool flip):Base(eType_Player){
 	m_img = COPY_RESOURCE("Player03", CImage);//画像複製
@@ -63,6 +64,7 @@ void Player03::Collision(Base* b){
 			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)) {
 				m_damage_no = s->GetAttackNo();//同じ攻撃の連続ダメージ防止
 				Base::Add(new Effect03("Effect_Blood", m_pos + CVector2D(0, -128), m_flip));
+				GameData03::t_time += 600;
 			}
 		}
 		break;
