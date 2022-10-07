@@ -19,11 +19,11 @@ void Player01::Update()
 
 		//バーの下移動
 		if (HOLD(CInput::eDown)) {
-			m_pos.y += 8;
+			m_pos.y += 10;
 		}
 		//バーの上移動
 		if (HOLD(CInput::eUp)) {
-			m_pos.y -= 8;
+			m_pos.y -= 10;
 
 		}
 

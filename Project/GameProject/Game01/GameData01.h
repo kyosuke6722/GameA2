@@ -5,7 +5,7 @@ class GameData01 {
 public:
 	static int point[2];
 	static int game_state;
-
+	static int t_time;
 
 
 

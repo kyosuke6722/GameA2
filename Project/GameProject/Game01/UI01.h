@@ -5,7 +5,7 @@ class UI01 :public Base {
 
 private:
 	CImage m_score;
-	CImage m_time;
+	CImage m_img;
 public:
 	UI01();
 

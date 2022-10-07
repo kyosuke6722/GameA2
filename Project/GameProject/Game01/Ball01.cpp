@@ -31,13 +31,15 @@ void Ball01::Update()
 
 		if (m_pos.x < 0)
 		{
-			GameData01::point[0]++;
+			GameData01::point[1]++;
+			GameData01::t_time += 600;
 			GameData01::game_state = 0;
+			m_vec = CVector2D(4,4);
 		}
 		if (m_pos.x > 1280 - 32) {
-			GameData01::point[1]++;
+			GameData01::point[0]++;
 			GameData01::game_state = 0;
-
+			m_vec = CVector2D(-4,4);
 		}
 
 
@@ -68,7 +70,7 @@ void Ball01::Collision(Base* b)
 	case eType_Enemy:
 		if (Base::CollisionRect(this, b)) {
 			m_vec.x *= -1;
-			m_vec *= 1.1f;
+			m_vec *= 1.2f;
 
 		}
 	break;

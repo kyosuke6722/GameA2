@@ -7,6 +7,7 @@ Enemy01::Enemy01(const CVector2D& pos):Base(eType_Enemy)
 	m_pos = pos;
 	
 	if (m_pos.x > 1280) {
+
 	}
 
 	
@@ -16,16 +17,23 @@ Enemy01::Enemy01(const CVector2D& pos):Base(eType_Enemy)
 
 void Enemy01::Update()
 {
-	if (GameData01::game_state == 1) {
-		//バーの下移動
-		if (HOLD(CInput::eDown)) {
-			m_pos.y += 8;
-		}
-		//バーの上移動
-		if (HOLD(CInput::eUp)) {
-			m_pos.y -= 8;
+	if (GameData01::game_state == 1)
+	{
+		Base* ball = Base::FindObject(eType_Ball);
+		if (ball) {
+			//バーの下移動
+			if (ball->m_pos.y > m_pos.y + 64+48) {
+				m_pos.y += 8;
 
+			}
+			//バーの上移動
+			if (ball->m_pos.y < m_pos.y -48+64) {
+				m_pos.y -= 8;
+
+			}
 		}
+		
+		
 		
 
 	}
