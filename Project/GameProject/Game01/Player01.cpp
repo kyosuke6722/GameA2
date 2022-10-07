@@ -1,4 +1,5 @@
 #include "Player01.h"
+#include "GameData01.h"
 
 
 Player01::Player01(const CVector2D& pos) :Base(eType_Player)
@@ -14,18 +15,20 @@ Player01::Player01(const CVector2D& pos) :Base(eType_Player)
 }
 void Player01::Update()
 {
-	//バーの下移動
-	if (HOLD(CInput::eDown)) {
-		m_pos.y += 8;
-	}
-	//バーの上移動
-	if (HOLD(CInput::eUp)) {
-		m_pos.y -= 8;
+	if (GameData01::game_state == 1) {
+
+		//バーの下移動
+		if (HOLD(CInput::eDown)) {
+			m_pos.y += 8;
+		}
+		//バーの上移動
+		if (HOLD(CInput::eUp)) {
+			m_pos.y -= 8;
+
+		}
+
 
 	}
-
-
-
 }
 
 void Player01::Draw()

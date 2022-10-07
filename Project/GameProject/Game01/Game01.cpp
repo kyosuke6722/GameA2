@@ -3,6 +3,8 @@
 #include"Player01.h"
 #include"Enemy01.h"
 #include"UI01.h"
+#include "GameData01.h"
+
 Game01::Game01()
 	:Base(eType_Scene)
 {
@@ -19,4 +21,7 @@ Game01::~Game01()
 
 void Game01::Update()
 {
+	if (GameData01::game_state == 0 && PUSH(CInput::eButton1))
+		GameData01::game_state = 1;
+
 }

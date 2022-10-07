@@ -1,4 +1,5 @@
 #include "Enemy01.h"
+#include "GameData01.h"
 
 Enemy01::Enemy01(const CVector2D& pos):Base(eType_Enemy)
 {
@@ -15,16 +16,19 @@ Enemy01::Enemy01(const CVector2D& pos):Base(eType_Enemy)
 
 void Enemy01::Update()
 {
-	//バーの下移動
-	if (HOLD(CInput::eDown)) {
-		m_pos.y += 8;
-	}
-	//バーの上移動
-	if (HOLD(CInput::eUp)) {
-		m_pos.y -= 8;
+	if (GameData01::game_state == 1) {
+		//バーの下移動
+		if (HOLD(CInput::eDown)) {
+			m_pos.y += 8;
+		}
+		//バーの上移動
+		if (HOLD(CInput::eUp)) {
+			m_pos.y -= 8;
+
+		}
+		
 
 	}
-
 }
 
 void Enemy01::Draw()

@@ -15,7 +15,7 @@ UI01::UI01()
 
 void UI01::Draw()
 {
-	int base_x[2] = { 640 - 48.640 + 48 };
+	int base_x[2] = { 640 - 48,640 + 48 };
 	for (int j = 0; j < 2; j++) {
 		int n = GameData01::point[j];
 
