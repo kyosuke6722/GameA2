@@ -7,11 +7,11 @@
 //マップマップの大きさ
 #define MAP_TIP_SIZE    32
 
-class Map : public Base {
+class Map04 : public Base {
 private:
 	CImage m_img;
 public:
-	Map();
+	Map04();
 	void Draw();
 	//指定座標のチップ番号を取得
 	int GetTip(const CVector2D& pos);

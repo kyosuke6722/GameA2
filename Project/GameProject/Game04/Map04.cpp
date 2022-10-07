@@ -25,14 +25,14 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 	{ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 };
 
-Map::Map() : Base(eType_Field)
+Map04::Map04() : Base(eType_Field)
 {
 
 	//画像複製
 	m_img = COPY_RESOURCE("MapTip", CImage);
 }
 
-void Map::Draw()
+void Map04::Draw()
 {
 	//マップチップによる表示の繰り返し
 	for (int i = 0; i < MAP_HEIGHT; i++) {
@@ -55,7 +55,7 @@ void Map::Draw()
 
 }
 
-int Map::GetTip(const CVector2D& pos)
+int Map04::GetTip(const CVector2D& pos)
 {
 	//列を計算
 	int col = pos.x / MAP_TIP_SIZE;
@@ -71,10 +71,10 @@ int Map::GetTip(const CVector2D& pos)
 	return GetTip(col, raw);
 
 }
-int Map::GetTip(int col, int raw) {
+int Map04::GetTip(int col, int raw) {
 	return stage1data[raw][col];
 }
-int Map::CollisionMap(const CVector2D& pos)
+int Map04::CollisionMap(const CVector2D& pos)
 {
 	//1点のみ検証
 	int t = GetTip(pos);
@@ -85,7 +85,7 @@ int Map::CollisionMap(const CVector2D& pos)
 	return 0;
 }
 
-int Map::CollisionMap(const CVector2D& pos, const CRect& rect)
+int Map04::CollisionMap(const CVector2D& pos, const CRect& rect)
 {
 	//左上
 	int t = GetTip(CVector2D(pos.x + rect.m_left, pos.y + rect.m_top));

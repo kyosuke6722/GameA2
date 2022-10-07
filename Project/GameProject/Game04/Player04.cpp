@@ -5,7 +5,7 @@ Player04::Player04(const CVector2D& pos)
 	:Base(eType_Player)
 {
 
-	m_img = COPY_RESOURCE("Player", CImage);
+	m_img = COPY_RESOURCE("Player04", CImage);
 	m_pos = pos;
 	m_img.SetCenter(16, 16);
 	//’ZŒ`‚ðÝ’è
@@ -52,7 +52,7 @@ void Player04::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Field:
-		if (Map* m = dynamic_cast<Map*>(b)) {
+		if (Map04* m = dynamic_cast<Map04*>(b)) {
 			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos_old.y)), m_rect=0;
 			if (t != 0)
 				m_pos.x = m_pos_old.x;
