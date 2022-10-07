@@ -9,9 +9,10 @@ Game04::Game04():Base(eType_Scene) {
 	Base::Add(new Enemy04(CVector2D(32 * 3, 32 * 8)));
 	//Base::Add(new Enemy04(CVector2D(32 * 17, 32 * 14)));
 	//Base::Add(new Enemy04(CVector2D(3 * 37, 32 * 10)));
+	//‚¨‚©‚µ‚¢
 	Base::Add(new Player04(CVector2D(32 * 3, 32 * 4)));
 	Base::Add(new Map04());
-
+	Base::Add(new UI04());
 
 }
 
