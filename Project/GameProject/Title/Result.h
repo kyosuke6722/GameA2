@@ -4,6 +4,7 @@
 class Result:public Base {
 private:
 	CImage m_img;
+	CImage m_time;
 	CFont m_result_text;
 public:
 	Result();
