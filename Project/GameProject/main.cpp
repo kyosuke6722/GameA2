@@ -115,8 +115,7 @@ void Init(void)
 	//-----------------------------------------------------
 	//Title(íSìñ:è¨éR)
 	//-----------------------------------------------------
-	ADD_RESOURCE("Title", CImage::CreateImage("Image/sky.png"));
-
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 
 
 
