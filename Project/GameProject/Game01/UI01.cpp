@@ -53,9 +53,9 @@ void UI01::Draw()
 		m_img.SetRect(16 * t, 16, 16 * t + 16, 32);
 		m_img.SetSize(24, 24);
 		if (i < 2)
-			m_img.SetPos(100 - 24 * i, 0);
+			m_img.SetPos(640+48 - 24 * i, 48);
 		else
-			m_img.SetPos(100 - 24 * (i + 1), 0);
+			m_img.SetPos(640+48 - 24 * (i + 1), 48);
 		m_img.Draw();
 	}
 }

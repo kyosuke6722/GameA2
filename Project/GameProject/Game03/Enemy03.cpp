@@ -3,11 +3,12 @@
 #include"Effect03.h"
 #include"AnimData03.h"
 #include"Field03.h"
+#include"Map.h"
 
 Enemy03::Enemy03(const CVector2D& pos, bool flip) :Base(eType_Enemy) {
 	m_img = COPY_RESOURCE("Enemy03", CImage);//画像複製
 	m_img.ChangeAnimation(0);//再生アニメーション設定
-	m_pos = pos;//座標設定
+	m_pos_old=m_pos = pos;//座標設定
 	m_img.SetCenter(128, 224);//中心位置設定
 	m_rect = CRect(-32,-128,32,0);//当たり判定用矩形
 	m_flip = flip;//反転設定
@@ -20,6 +21,7 @@ Enemy03::Enemy03(const CVector2D& pos, bool flip) :Base(eType_Enemy) {
 }
 
 void Enemy03::Update(){
+	m_pos_old = m_pos;
 	switch (m_state) {
 		//通常状態
 	case eState_Idle:
@@ -75,10 +77,24 @@ void Enemy03::Collision(Base* b) {
 		}
 		break;
 	case eType_Field:
+		/*
 		if (Field03* f = dynamic_cast<Field03*>(b)) {
 			//地面より下に行ったとき
 			if (m_pos.y > f->GetGroundY()) {
 				m_pos.y = f->GetGroundY();//地面の高さに戻す
+				m_vec.y = 0;//落下速度リセット
+				m_is_ground = true;//接地フラグON
+			}
+		}
+		*/
+		if (Map* m = dynamic_cast<Map*>(b)) {
+			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos_old.y));
+			if (t != 0) {
+				m_pos.x = m_pos_old.x;
+			}
+			t = m->CollisionMap(CVector2D(m_pos_old.x, m_pos.y));
+			if (t != 0) {
+				m_pos.y = m_pos_old.y;//元の高さに戻す
 				m_vec.y = 0;//落下速度リセット
 				m_is_ground = true;//接地フラグON
 			}

@@ -26,10 +26,10 @@ Result::~Result(){
 		Base::Add(new Game04());
 	}
 	else{
-		//GameData01::t_time = 0;
-		//GameData02::t_time = 0;
+		GameData01::t_time = 0;
+		GameData02::t_time = 0;
 		GameData03::t_time = 0;
-		//GameData04::t_time = 0;
+		GameData04::t_time = 0;
 		Base::Add(new Title());
 	}
 }
@@ -56,12 +56,12 @@ void Result::Draw() {
 	for (int j = 1; j <= 6; j++) {
 		int time = 0;
 		int t = 0;
-		if      (j == 1)time = GameData01::t_time / 60;
+		if (j == 1)time = GameData01::t_time / 60;
 		else if (j == 2)time = GameData02::t_time / 60;
 		else if (j == 3)time = GameData03::t_time / 60;
-		else if (j == 4)time = 0;//GameData04::t_time / 60;
+		else if (j == 4)time = GameData04::t_time / 60;
 		else            time = GameData01::t_time / 60 + GameData02::t_time / 60 +
-			                   GameData03::t_time / 60;//+GameData04::t_time/60;
+			                   GameData03::t_time / 60 + GameData04::t_time / 60;
 		if (j != 5) {
 			for (int i = 0; i < 4; i++) {
 				if (i < 1) {

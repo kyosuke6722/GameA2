@@ -32,6 +32,7 @@
     <ClCompile Include="Game03\Game03.cpp" />
     <ClCompile Include="Game03\GameData03.cpp" />
     <ClCompile Include="Game03\Goal03.cpp" />
+    <ClCompile Include="Game03\Map.cpp" />
     <ClCompile Include="Game03\Player03.cpp" />
     <ClCompile Include="Game03\Slash03.cpp" />
     <ClCompile Include="Game03\UI03.cpp" />
@@ -68,6 +69,7 @@
     <ClInclude Include="Game03\Game03.h" />
     <ClInclude Include="Game03\GameData03.h" />
     <ClInclude Include="Game03\Goal03.h" />
+    <ClInclude Include="Game03\Map.h" />
     <ClInclude Include="Game03\Player03.h" />
     <ClInclude Include="Game03\Slash03.h" />
     <ClInclude Include="Game03\UI03.h" />

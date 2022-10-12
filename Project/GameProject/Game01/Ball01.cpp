@@ -29,13 +29,14 @@ void Ball01::Update()
 			m_vec.y *= -1;
 		}
 
-		if (m_pos.x < 0)
-		{
+		//“G‘¤ƒS[ƒ‹
+		if (m_pos.x < 0){
 			GameData01::point[1]++;
 			GameData01::t_time += 600;
 			GameData01::game_state = 0;
-			m_vec = CVector2D(4,4);
+			m_vec = CVector2D(4, 4);
 		}
+		//ƒvƒŒƒCƒ„[‘¤ƒS[ƒ‹
 		if (m_pos.x > 1280 - 32) {
 			GameData01::point[0]++;
 			GameData01::game_state = 0;
@@ -57,7 +58,6 @@ void Ball01::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
-	DrawRect();
 
 
 
@@ -69,12 +69,16 @@ void Ball01::Collision(Base* b)
 	case eType_Player:
 	case eType_Enemy:
 		if (Base::CollisionRect(this, b)) {
+			if (b->m_pos.y + 20 > m_pos.y || b->m_pos.y + 108 < m_pos.y) {
+				m_vec.y *= 0.9;
+			}
+			else if((m_vec.y <= 8 && m_vec.y > 0) || (m_vec.y >= -8 && m_vec.y < 0)) {
+				m_vec.y *= 1.1;
+			}
 			m_vec.x *= -1;
-			m_vec *= 1.2f;
-
+			if ((m_vec.x <= 10 && m_vec.x > 0) || (m_vec.x >= -10 && m_vec.x < 0))
+				m_vec *= 1.2f;
 		}
 	break;
 	}
-
-
 }
