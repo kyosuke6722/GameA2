@@ -52,7 +52,6 @@ void Player03::Draw(){
 	m_img.SetPos(GetScreenPos(m_pos));//位置設定
 	m_img.SetFlipH(m_flip);//反転設定
 	m_img.Draw();//描画
-	DrawRect();
 }
 
 void Player03::Collision(Base* b){
@@ -100,7 +99,7 @@ void Player03::Collision(Base* b){
 
 void Player03::StateIdle(){
 	const float move_speed = 6;//移動量
-	const float jump_pow = 15;//ジャンプ力
+	const float jump_pow = 12;//ジャンプ力
 	bool move_flag = false;//移動フラグ
 
 	//左移動
@@ -117,13 +116,13 @@ void Player03::StateIdle(){
 	}
 
 	//ジャンプ
-	if (m_is_ground && PUSH(CInput::eButton2)) {
+	if (m_is_ground && PUSH(CInput::eUp)) {
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
 
 	//攻撃
-	if (PUSH(CInput::eButton1)) {
+	if (PUSH(CInput::eMouseL)) {
 		m_state = eState_Attack;//攻撃状態へ移行
 		m_attack_no++;
 	}

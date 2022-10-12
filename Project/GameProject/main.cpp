@@ -97,6 +97,9 @@ void Init(void)
 	ADD_RESOURCE("Slash", CImage::CreateImage("Image/Effect_Slash.png",effect_slash_anim_data,128,128));
 	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png",effect_smoke_anim_data,128,128));
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png",effect_blood_anim_data,128,128));
+	
+	SOUND("BGM_Game03")->Load("Sound/BGM/BGM_Game03.wav",1);
+	SOUND("SE_Hit03")->Load("Sound/SE/SE_Hit_03.wav", 1);
 
 	//-----------------------------------------------------
 	//Game04(’S“–:XŒû)

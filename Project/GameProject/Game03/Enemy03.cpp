@@ -56,7 +56,7 @@ void Enemy03::Draw(){
 	m_img.SetPos(GetScreenPos(m_pos));//À•Wİ’è
 	m_img.SetFlipH(m_flip);//”½“]İ’è
 	m_img.Draw();//•`‰æ
-	DrawRect();//“–‚½‚è”»’è—p‹éŒ`•\¦
+	//DrawRect();//“–‚½‚è”»’è—p‹éŒ`•\¦
 }
 
 void Enemy03::Collision(Base* b) {
@@ -65,8 +65,9 @@ void Enemy03::Collision(Base* b) {
 		if (Slash03* s = dynamic_cast<Slash03*>(b)) {
 			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)) {
 				m_damage_no = s->GetAttackNo();//“¯‚¶UŒ‚‚Ì˜A‘±ƒ_ƒ[ƒW–h~
+				SOUND("SE_Hit03")->Play();
 				m_hp -= 50;
-				if (m_hp < 0) {
+				if (m_hp <= 0) {
 					m_state = eState_Down;
 				}
 				else {
@@ -106,7 +107,7 @@ void Enemy03::Collision(Base* b) {
 void Enemy03::StateWait(){
 	m_img.ChangeAnimation(eAnimIdle);
 	if (--m_cnt <= 0) {
-		m_cnt =180;//‘Ò‹@ŠÔ3•b
+		m_cnt =rand()%120+180;//‘Ò‹@ŠÔ3`5•b
 		m_state = eState_Idle;
 	}
 }
@@ -147,7 +148,7 @@ void Enemy03::StateIdle() {
 	}
 	
 	if (--m_cnt <= 0) {
-		m_cnt = rand() % 120 + 180;//‘Ò‹@ŠÔ3`5•b
+		m_cnt =rand()%120+180;//‘Ò‹@ŠÔ3`•b
 		m_state = eState_Wait;
 	}
 	

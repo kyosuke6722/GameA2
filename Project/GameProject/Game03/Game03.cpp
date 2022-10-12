@@ -11,12 +11,13 @@
 Game03::Game03():Base(eType_Scene){
 	//Base::Add(new Field03());
 	Base::Add(new Map());
-	Base::Add(new Player03(CVector2D(200, 540), false));
+	Base::Add(new Player03(CVector2D(128 * 2, 128 * 3),false));
 	Base::Add(new Enemy03(CVector2D(1280 + 256 * 1, 540), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 2, 540), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 3, 540), true));
-	Base::Add(new Goal03(CVector2D(2048, 540-54)));
+	Base::Add(new Goal03(CVector2D(128*17-70, 128*6-56)));
 	Base::Add(new UI03());
+	SOUND("BGM_Game03")->Play();
 }
 
 Game03::~Game03(){
