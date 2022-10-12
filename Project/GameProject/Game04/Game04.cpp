@@ -7,10 +7,14 @@
 #include"Map04.h"
 Game04::Game04():Base(eType_Scene) {
 	Base::Add(new Enemy04(CVector2D(32 * 3, 32 * 8)));
-	//Base::Add(new Enemy04(CVector2D(32 * 17, 32 * 14)));
-	//Base::Add(new Enemy04(CVector2D(3 * 37, 32 * 10)));
-	//‚¨‚©‚µ‚¢
+	Base::Add(new Enemy04(CVector2D(32 * 17, 32 * 14)));
+	Base::Add(new Enemy04(CVector2D(3 * 37, 32 * 10)));
+	Base::Add(new Enemy04(CVector2D(3 * 50, 32 * 20)));
+	Base::Add(new Enemy04(CVector2D(32 * 10, 32 * 8)));
+	Base::Add(new Enemy04(CVector2D(32 * 25, 32 * 13)));
+	Base::Add(new Enemy04(CVector2D(32 * 35, 32 * 6)));
 	Base::Add(new Player04(CVector2D(32 * 3, 32 * 4)));
+
 	Base::Add(new Map04());
 	Base::Add(new UI04());
 

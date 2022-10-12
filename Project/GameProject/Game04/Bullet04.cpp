@@ -1,6 +1,6 @@
 #include "Bullet04.h"
 #include "Map04.h"
-
+#include "GameData04.h"
 
 Bullet04::Bullet04(int type, const CVector2D& pos, float ang, float speed)
 	:Base(type)
@@ -43,7 +43,7 @@ void Bullet04::Collision(Base* b)
 	case eType_Player:
 		if (m_type == eType_Enemy_Attack && Base::CollisionCircle(this, b)) {
 			SetKill();
-			b->SetKill();
+			GameData04::t_time += 600;
 		}
 		break;
 	case eType_Enemy:

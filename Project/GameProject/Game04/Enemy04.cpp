@@ -40,6 +40,7 @@ void Enemy04::Update()
 
 void Enemy04::Draw()
 {
+	m_img.SetAng(m_ang);
 	m_img.SetPos(m_pos);
 	m_img.Draw();
 }

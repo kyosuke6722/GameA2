@@ -6,7 +6,7 @@ Player04::Player04(const CVector2D& pos)
 {
 
 	m_img = COPY_RESOURCE("Player04", CImage);
-	m_pos = pos;
+	m_pos = m_pos_old = pos;
 	m_img.SetCenter(16, 16);
 	//íZå`Çê›íË
 	m_rect = CRect(-16, -16, 16, 16);
@@ -63,6 +63,9 @@ void Player04::Collision(Base* b)
 
 
 		}
+	case eType_Enemy:
+		if (Base::CollisionCircle(this, b))
+			m_pos = m_pos_old;
 		break;
 
 	}
