@@ -15,7 +15,7 @@ Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet) {
 
 void Bullet02::Update() {
 	//’e‚Ì‘¬‚³
-	//const int move_speed = 4;
+	//const int move_speed1 = 4;
 	//m_pos.y -= move_speed;
 }
 
@@ -41,10 +41,10 @@ void Bullet02::Collision(Base* b) {
 	case eType_Player:
 		//‰~“¯Žm‚Ì”»’èiA‘ÎÛ‚‚j
 		if (Base::CollisionCircle(this, b)) {
-			//b->SetKill();
+			b->SetKill();
 			//SetKill();
 			Base::Add(new Effect02(b->m_pos));
-			//GameData::t_time += 10;
+			//GameData02::t_time += 10;
 		}
 		break;
 

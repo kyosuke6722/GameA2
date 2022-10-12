@@ -21,7 +21,7 @@ void Player02::Update() {
 		m_pos.y -= move_speed;
 	if (HOLD(CInput::eDown))
 		m_pos.y += move_speed;
-	if (PUSH(CInput::eButton5)) {
+	if (PUSH(CInput::eButton3)) {
 		Base::Add(new Bullet02(m_pos));
 		m_pos.y -= 4;
 	}
