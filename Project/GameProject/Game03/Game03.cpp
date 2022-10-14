@@ -22,6 +22,7 @@ Game03::Game03():Base(eType_Scene){
 
 Game03::~Game03(){
 	Base::KillAll();
+	SOUND("BGM_Game03")->Pause();
 	Result::finish_game = 3;
 	Base::Add(new Result());
 }
