@@ -66,7 +66,7 @@ void Init(void)
 	//-----------------------------------------------------
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));//タイム計測用(全ゲーム共通)
 	SOUND("SE_Clear")->Load("Sound/SE/SE_Clear.wav",1);//クリア時ジングル
-	SOUND("SE_AllClear")->Load("Sound/SE/SE_AllClear.wav", 1);//オールクリア時ジングルdddd
+	SOUND("SE_AllClear")->Load("Sound/SE/SE_AllClear.wav", 1);//オールクリア時ジングル
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));//シューティングゲームの弾(Game02,Game04)
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));//マップチップ(Game03,Game04)
 

@@ -50,8 +50,12 @@ void Player03::Update(){
 
 	//ƒXƒNƒ[ƒ‹Ý’è
 	if(m_pos.x>640&&m_pos.x<72*40-640)
-	m_scroll.x = m_pos.x - 1280 / 2;
-	m_scroll.y = m_pos.y-654;
+		m_scroll.x = m_pos.x - 1280 / 2;
+	if (m_pos.y > 72 * 12)
+		m_scroll.y = 72 * 21 - 654;
+	else
+		m_scroll.y = 72 * 11 - 654;
+	//m_scroll.y = m_pos.y-654;
 }
 
 void Player03::Draw(){

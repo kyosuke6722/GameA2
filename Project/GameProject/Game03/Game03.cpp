@@ -9,15 +9,15 @@
 #include"../Title/Result.h"
 
 Game03::Game03():Base(eType_Scene){
+	m_cnt = 0;
 	//Base::Add(new Field03());
 	Base::Add(new Map());
-	Base::Add(new Player03(CVector2D(72* 2, 72 * 20),false));
+	Base::Add(new Player03(CVector2D(72* 11, 72 * 20),false));
 	Base::Add(new Enemy03(CVector2D(72*25,72*20), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 2, 540), true));
 	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 3, 540), true));
 	Base::Add(new Goal03(CVector2D(128*17-70, 128*6-56)));
 	Base::Add(new UI03());
-	SOUND("BGM_Game03")->Play();
 }
 
 Game03::~Game03(){
@@ -28,6 +28,12 @@ Game03::~Game03(){
 }
 
 void Game03::Update(){
+	
+	if (m_cnt-- <= 0) {
+		SOUND("BGM_Game03")->Play();
+		m_cnt = 37 * 60;
+	}
+	
 	if (!Base::FindObject(eType_Goal)) {
 		SetKill();
 	}
