@@ -72,6 +72,7 @@ void Player03::Collision(Base* b){
 			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)&&m_invincible<=0) {
 				m_damage_no = s->GetAttackNo();//“¯‚¶UŒ‚‚Ì˜A‘±ƒ_ƒ[ƒW–hŽ~
 				m_invincible = 60;//–³“GŽžŠÔ1•b
+				SOUND("SE_PlayerDamage03")->Play();
 				Base::Add(new Effect03("Effect_Blood", m_pos + CVector2D(0, -128), m_flip));
 				GameData03::t_time += 600;
 			}

@@ -12,6 +12,10 @@ Result::Result():Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\msgothic.
 	m_img = COPY_RESOURCE("Sky", CImage);
 	m_time = COPY_RESOURCE("UI", CImage);
 	m_time.SetSize(48, 48);
+	if (finish_game == 4)
+		SOUND("SE_AllClear")->Play();
+	else
+		SOUND("SE_Clear")->Play();
 }
 int Result::finish_game = 0;
 
@@ -56,7 +60,7 @@ void Result::Draw() {
 	for (int j = 1; j <= 6; j++) {
 		int time = 0;
 		int t = 0;
-		if (j == 1)time = GameData01::t_time / 60;
+		if      (j == 1)time = GameData01::t_time / 60;
 		else if (j == 2)time = GameData02::t_time / 60;
 		else if (j == 3)time = GameData03::t_time / 60;
 		else if (j == 4)time = GameData04::t_time / 60;

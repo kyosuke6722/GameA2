@@ -65,7 +65,10 @@ void Init(void)
 	//Game共通
 	//-----------------------------------------------------
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));//タイム計測用(全ゲーム共通)
+	SOUND("SE_Clear")->Load("Sound/SE/SE_Clear.wav",1);//クリア時ジングル
+	SOUND("SE_AllClear")->Load("Sound/SE/SE_AllClear.wav", 1);//オールクリア時ジングルdddd
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));//シューティングゲームの弾(Game02,Game04)
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));//マップチップ(Game03,Game04)
 
 	//-----------------------------------------------------
 	//Game01(担当:森口)
@@ -90,7 +93,6 @@ void Init(void)
 	//-----------------------------------------------------
 	ADD_RESOURCE("Player03", CImage::CreateImage("Image/Player03.png",player_anim_data,256,256));
 	ADD_RESOURCE("Enemy03", CImage::CreateImage("Image/Enemy03.png",enemy_anim_data,256,256));
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/Town.png"));
 	ADD_RESOURCE("ForeGround", CImage::CreateImage("Image/ForeGround.png"));
@@ -100,7 +102,8 @@ void Init(void)
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png",effect_blood_anim_data,128,128));
 	
 	SOUND("BGM_Game03")->Load("Sound/BGM/BGM_Game03.wav",1);
-	SOUND("SE_Hit03")->Load("Sound/SE/SE_Hit_03.wav", 1);
+	SOUND("SE_EnemyDamage03")->Load("Sound/SE/SE_EnemyDamage_03.wav", 1);
+	SOUND("SE_PlayerDamage03")->Load("Sound/SE/SE_PlayerDamage_03.wav", 1);
 
 	//-----------------------------------------------------
 	//Game04(担当:森口)
@@ -108,7 +111,6 @@ void Init(void)
 	ADD_RESOURCE("Player04", CImage::CreateImage("Image/Player04.png"));
 	ADD_RESOURCE("Enemy04", CImage::CreateImage("Image/Enemy04.png"));
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	
 
 

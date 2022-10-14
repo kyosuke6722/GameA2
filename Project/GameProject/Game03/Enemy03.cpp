@@ -65,7 +65,7 @@ void Enemy03::Collision(Base* b) {
 		if (Slash03* s = dynamic_cast<Slash03*>(b)) {
 			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)) {
 				m_damage_no = s->GetAttackNo();//“¯‚¶UŒ‚‚Ì˜A‘±ƒ_ƒ[ƒW–hŽ~
-				SOUND("SE_Hit03")->Play();
+				SOUND("SE_EnemyDamage03")->Play();
 				m_hp -= 50;
 				if (m_hp <= 0) {
 					m_state = eState_Down;
