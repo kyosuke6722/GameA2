@@ -14,6 +14,7 @@ private:
 	bool m_is_ground;//着地フラグ
 	int m_attack_no;//攻撃番号
 	int m_damage_no;//ダメージ番号
+	int m_invincible;//無敵時間
 
 //各状態での挙動
 	void StateIdle();

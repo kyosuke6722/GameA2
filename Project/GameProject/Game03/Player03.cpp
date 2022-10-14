@@ -17,10 +17,13 @@ Player03::Player03(const CVector2D& pos, bool flip):Base(eType_Player){
 	m_is_ground = true;//着地フラグ
 	m_attack_no = rand();//攻撃番号
 	m_damage_no = -1;//ダメージ番号
+	m_invincible = 0;//無敵時間
 }
 
 void Player03::Update(){
 	m_pos_old = m_pos;
+	if (m_invincible > 0)
+		m_invincible--;
 	switch (m_state) {
 		//通常状態
 	case eState_Idle:
@@ -44,8 +47,11 @@ void Player03::Update(){
 	m_pos += m_vec;
 
 	m_img.UpdateAnimation();//アニメーション更新
-	m_scroll.x = m_pos.x - 1280 / 2;//スクロール設定
-	m_scroll.y = m_pos.y - 600;
+
+	//スクロール設定
+	if(m_pos.x>640&&m_pos.x<72*40-640)
+	m_scroll.x = m_pos.x - 1280 / 2;
+	m_scroll.y = m_pos.y-654;
 }
 
 void Player03::Draw(){
@@ -63,8 +69,9 @@ void Player03::Collision(Base* b){
 		break;
 	case eType_Enemy_Attack:
 		if (Slash03* s = dynamic_cast<Slash03*>(b)) {
-			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)) {
+			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)&&m_invincible<=0) {
 				m_damage_no = s->GetAttackNo();//同じ攻撃の連続ダメージ防止
+				m_invincible = 60;//無敵時間1秒
 				Base::Add(new Effect03("Effect_Blood", m_pos + CVector2D(0, -128), m_flip));
 				GameData03::t_time += 600;
 			}
@@ -99,7 +106,7 @@ void Player03::Collision(Base* b){
 
 void Player03::StateIdle(){
 	const float move_speed = 6;//移動量
-	const float jump_pow = 12;//ジャンプ力
+	const float jump_pow = 15;//ジャンプ力
 	bool move_flag = false;//移動フラグ
 
 	//左移動
