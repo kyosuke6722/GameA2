@@ -13,7 +13,7 @@ Game01::Game01()
 	Base::Add(new Player01(CVector2D(0, 300)));
 	Base::Add(new Enemy01(CVector2D(1280 - 32,300)));
 	Base::Add(new UI01());
-
+	SOUND("BGM_Game01")->Play();
 }
 Game01::~Game01()
 {
@@ -33,7 +33,7 @@ void Game01::Update()
 	}
 	if (GameData01::game_state ==1) {
 		GameData01::t_time++;
-		SOUND("BGM_Game01")->Play();
+		
 	}
 
 }
