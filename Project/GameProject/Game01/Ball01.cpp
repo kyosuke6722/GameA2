@@ -76,7 +76,8 @@ void Ball01::Collision(Base* b)
 				m_vec.y *= 1.1;
 			}
 			m_vec.x *= -1;
-			if ((m_vec.x <= 10 && m_vec.x > 0) || (m_vec.x >= -10 && m_vec.x < 0))
+			SOUND("SE_Hit01")->Play();
+			if ((m_vec.x <= 15 && m_vec.x > 0) || (m_vec.x >= -15 && m_vec.x < 0))
 				m_vec *= 1.2f;
 		}
 	break;
