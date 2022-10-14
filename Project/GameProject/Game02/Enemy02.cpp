@@ -22,7 +22,11 @@ void Enemy02::Update() {
 		//カウントリセット
 		m_cnt = 0;
 	}
+	//弾
 	if (m_cnt >= 40) {
+		//Enemy_Attack();
+			m_img.Load("Image/Bullet2.png");
+
 		Base::Add(new Bullet02(m_pos));
 		m_pos.y += 4;
 	}

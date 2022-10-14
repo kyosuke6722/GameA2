@@ -11,4 +11,5 @@ public:
 	Enemy02(const CVector2D& pos);
 	void Update();
 	void Draw();
+	void Enemy_Attack();
 };

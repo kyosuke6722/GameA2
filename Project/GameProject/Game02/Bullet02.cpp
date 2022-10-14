@@ -2,8 +2,10 @@
 #include "Effect02.h"
 #include "GameData02.h"
 
-Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet) {
+Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet){
+
 	m_img.Load("Image/Bullet.png");
+	m_img.Load("Image/Bullet2.png");
 	m_pos = pos;
 	//”¼Œa
 	m_rad = 12;
@@ -12,6 +14,8 @@ Bullet02::Bullet02(const CVector2D& pos) : Base(eType_Bullet) {
 	//‰æ‘œ‚Ì’†S‚Éİ’è
 	m_img.SetCenter(16, 16);
 }
+
+
 
 void Bullet02::Update() {
 	//’e‚Ì‘¬‚³
@@ -29,6 +33,7 @@ void Bullet02::Collision(Base* b) {
 	switch (b->m_type) {
 		//“G‚Ìê‡
 	case eType_Enemy:
+
 		//‰~“¯m‚Ì”»’èi©•ªA‘ÎÛ‚‚j
 		if (Base::CollisionCircle(this, b)) {
 			b->SetKill();
@@ -39,7 +44,8 @@ void Bullet02::Collision(Base* b) {
 		break;
 
 	case eType_Player:
-		//‰~“¯m‚Ì”»’èiA‘ÎÛ‚‚j
+
+		//‰~“¯m‚Ì”»’èi©•ªA‘ÎÛ‚‚j
 		if (Base::CollisionCircle(this, b)) {
 			b->SetKill();
 			//SetKill();

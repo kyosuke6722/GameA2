@@ -12,16 +12,25 @@ Player02::Player02(const CVector2D& pos) : Base(eType_Player) {
 }
 
 void Player02::Update() {
+	//ë¨ìx
 	const int move_speed = 4;
+	//âE
 	if (HOLD(CInput::eRight))
 		m_pos.x += move_speed;
+	//ç∂
 	if (HOLD(CInput::eLeft))
 		m_pos.x -= move_speed;
+	//è„
 	if (HOLD(CInput::eUp))
 		m_pos.y -= move_speed;
+	//â∫
 	if (HOLD(CInput::eDown))
 		m_pos.y += move_speed;
+	//íe
 	if (PUSH(CInput::eButton3)) {
+		//Player_Attack();
+			m_img.Load("Image/Bullet.png");
+		
 		Base::Add(new Bullet02(m_pos));
 		m_pos.y -= 4;
 	}
