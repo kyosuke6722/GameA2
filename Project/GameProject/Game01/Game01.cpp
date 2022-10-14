@@ -17,6 +17,7 @@ Game01::Game01()
 }
 Game01::~Game01()
 {
+	SOUND("BGM_Game01")->Pause();
 	Base::KillAll();
 	Result::finish_game = 1;
 	Base::Add(new Result());
@@ -28,8 +29,11 @@ void Game01::Update()
 		GameData01::game_state = 1;
 	if (GameData01::point[0]>=5) {
 		SetKill();
+
 	}
 	if (GameData01::game_state ==1) {
 		GameData01::t_time++;
+		SOUND("BGM_Game01")->Play();
 	}
+
 }
