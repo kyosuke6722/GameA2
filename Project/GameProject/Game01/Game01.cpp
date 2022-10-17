@@ -28,7 +28,7 @@ void Game01::Update()
 {
 	if (GameData01::game_state == 0 && PUSH(CInput::eButton1))
 		GameData01::game_state = 1;
-	if (GameData01::point[0]>=5) {
+	if (GameData01::point[0]>=3) {
 		SetKill();
 
 	}
