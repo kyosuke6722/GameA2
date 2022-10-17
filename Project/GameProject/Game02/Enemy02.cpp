@@ -13,22 +13,23 @@ Enemy02::Enemy02(const CVector2D& pos) : Base(eType_Enemy) {
 
 void Enemy02::Update() {
 	//敵を下へ
-	const int move_speed = 32;
+	const int move_speed = 4;
 	//カウントアップ
 	m_cnt++;
-	if (m_cnt >= 60) {
+	if (m_cnt >= 120) {
 		//移動
 		m_pos.y += move_speed;
 		//カウントリセット
-		m_cnt = 0;
+		
 	}
 	//弾
-	if (m_cnt >= 40) {
+	if (m_cnt >= 180) {
 		//Enemy_Attack();
-			m_img.Load("Image/Bullet2.png");
+		//m_img.Load("Image/Bullet2.png");
 
-		Base::Add(new Bullet02(m_pos));
-		m_pos.y += 4;
+		Base::Add(new Bullet02(eType_Enemy_Attack, m_pos, m_ang, 4));
+		//m_pos.y += 4;
+		m_cnt = 0;
 	}
 }
 

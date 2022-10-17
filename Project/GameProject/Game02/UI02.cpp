@@ -2,7 +2,8 @@
 #include "GameData02.h"
 
 UI02::UI02() :Base(eType_UI) {
-	m_img.Load("Image/UI.png");
+	//m_img.Load("Image/UI.png");
+	m_img = COPY_RESOURCE("UI", CImage);
 }
 
 void UI02::Draw() {
@@ -35,9 +36,9 @@ void UI02::Draw() {
 		m_img.SetRect(16 * t, 16, 16 * t + 16, 32);
 		m_img.SetSize(24, 24);
 		if (i < 2)
-			m_img.SetPos(100 - 24 * i, 0);
+			m_img.SetPos(100 + 32 - 24 * i, 32);
 		else
-			m_img.SetPos(100 - 24 * (i + 1), 0);
+			m_img.SetPos(100 + 32 - 24 * (i + 1), 32);
 		m_img.Draw();
 	}
 }

@@ -84,8 +84,8 @@ void Init(void)
 	//-----------------------------------------------------
 	ADD_RESOURCE("Player02", CImage::CreateImage("Image/Player02.png"));
 	ADD_RESOURCE("Enemy02", CImage::CreateImage("Image/Enemy02.png"));
-	ADD_RESOURCE("Effect02", CImage::CreateImage("Image/Effect_Bomb.png"));
-	
+	ADD_RESOURCE("Effect_Bomb", CImage::CreateImage("Image/Effect_Bomb.png"));
+	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 
 
 	//-----------------------------------------------------

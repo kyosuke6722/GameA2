@@ -29,10 +29,10 @@ void Player02::Update() {
 	//’e
 	if (PUSH(CInput::eButton3)) {
 		//Player_Attack();
-			m_img.Load("Image/Bullet.png");
+		//m_img.Load("Image/Bullet.png");
 		
-		Base::Add(new Bullet02(m_pos));
-		m_pos.y -= 4;
+		Base::Add(new Bullet02(eType_Player_Attack, m_pos, m_ang, 4));
+		//m_pos.y += 4;
 	}
 }
 
