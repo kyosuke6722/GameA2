@@ -14,6 +14,7 @@
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game01\Ball01.cpp" />
     <ClCompile Include="Game01\Enemy01.cpp" />
+    <ClCompile Include="Game01\Field01.cpp" />
     <ClCompile Include="Game01\Game01.cpp" />
     <ClCompile Include="Game01\GameData01.cpp" />
     <ClCompile Include="Game01\Player01.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game01\Ball01.h" />
     <ClInclude Include="Game01\Enemy01.h" />
+    <ClInclude Include="Game01\Field01.h" />
     <ClInclude Include="Game01\Game01.h" />
     <ClInclude Include="Game01\GameData01.h" />
     <ClInclude Include="Game01\Player01.h" />

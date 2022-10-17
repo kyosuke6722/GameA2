@@ -77,6 +77,7 @@ void Init(void)
 	ADD_RESOURCE("Enemy01", CImage::CreateImage("Image/Bar.png"));
 	ADD_RESOURCE("Player01", CImage::CreateImage("Image/Bar.png"));
 	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
+	ADD_RESOURCE("background", CImage::CreateImage("Image/Game01_background.png"));
 	SOUND("BGM_Game01")->Load("Sound/BGM/BGM_Game01.wav", 1);
 	SOUND("SE_Hit01")->Load("Sound/SE/SE_Hit_01.wav",1);
 	//-----------------------------------------------------
