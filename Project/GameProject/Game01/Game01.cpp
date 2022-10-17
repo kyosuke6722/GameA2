@@ -5,10 +5,11 @@
 #include"UI01.h"
 #include "GameData01.h"
 #include"../Title/Result.h"
+#include"Field01.h"
 Game01::Game01()
 	:Base(eType_Scene)
 {
-
+	Base::Add(new Field01());
 	Base::Add(new Ball01(CVector2D(600, 300)));
 	Base::Add(new Player01(CVector2D(0, 300)));
 	Base::Add(new Enemy01(CVector2D(1280 - 32,300)));
@@ -27,7 +28,7 @@ void Game01::Update()
 {
 	if (GameData01::game_state == 0 && PUSH(CInput::eButton1))
 		GameData01::game_state = 1;
-	if (GameData01::point[0]>=5) {
+	if (GameData01::point[0]>=3) {
 		SetKill();
 
 	}
@@ -37,3 +38,4 @@ void Game01::Update()
 	}
 
 }
+

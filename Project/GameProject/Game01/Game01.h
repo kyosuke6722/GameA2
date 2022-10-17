@@ -6,7 +6,8 @@ public:
 	Game01();
 	~Game01();
 	void Update();
-
-
+	
+private:
+	
 };
 
