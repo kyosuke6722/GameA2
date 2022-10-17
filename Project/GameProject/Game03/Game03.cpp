@@ -10,13 +10,15 @@
 
 Game03::Game03():Base(eType_Scene){
 	m_cnt = 0;
+	m_enemy_flag =true;
 	//Base::Add(new Field03());
 	Base::Add(new Map());
 	Base::Add(new Player03(CVector2D(72* 11, 72 * 20),false));
+	//Base::Add(new Player03(CVector2D(72 * 11, 72 * 10), false));
 	Base::Add(new Enemy03(CVector2D(72*25,72*20), true));
-	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 2, 540), true));
-	//Base::Add(new Enemy03(CVector2D(1280 + 256 * 3, 540), true));
-	Base::Add(new Goal03(CVector2D(128*17-70, 128*6-56)));
+	Base::Add(new Enemy03(CVector2D(72 * 38, 72 * 20), true));
+	Base::Add(new Enemy03(CVector2D(72 * 15, 72 * 10), true));
+	Base::Add(new Goal03(CVector2D(72*4,72*8+20)));
 	Base::Add(new UI03());
 }
 
@@ -28,7 +30,15 @@ Game03::~Game03(){
 }
 
 void Game03::Update(){
-	
+	Player03* p = dynamic_cast<Player03*>(Base::FindObject(eType_Player));
+	if (p) {
+		if (p->m_pos.x < 72 * 13 && p->m_pos.y < 72 * 12&&m_enemy_flag) {
+			Base::Add(new Enemy03(CVector2D(72 * 5, 72 * 4), true));
+			Base::Add(new Enemy03(CVector2D(72 * 7, 72 * 4), true));
+			Base::Add(new Enemy03(CVector2D(72 * 17, 72 * 4), false));
+			m_enemy_flag = false;
+		}
+	}
 	if (m_cnt-- <= 0) {
 		SOUND("BGM_Game03")->Play();
 		m_cnt = 37 * 60;

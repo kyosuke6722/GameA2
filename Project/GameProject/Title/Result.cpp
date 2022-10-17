@@ -54,12 +54,12 @@ void Result::Update(){
 void Result::Draw() {
 	m_img.SetSize(1280, 720);
 	m_img.Draw();
-	anatora.SetPos(0, 650);
+	anatora.SetPos(0, 630);
 	anatora.Draw();
 	for (int i = 3; i <= 6; i++) {
-		m_result_text.Draw(128, 64 * i, 0, 0, 0, "Game0%d:", i - 2);
+		m_result_text.Draw(128, 64 * i-30, 0, 0, 0, "Game0%d:", i - 2);
 	}
-	m_result_text.Draw(128, 64 * 8, 0, 0, 0, "Total:");
+	m_result_text.Draw(128+30, 64 * 8-30, 0, 0, 0, "Total:");
 
 	for (int j = 1; j <= 6; j++) {
 		int time = 0;
@@ -88,13 +88,13 @@ void Result::Draw() {
 				}
 				m_time.SetRect(16 * t, 16, 16 * t + 16, 32);
 				if (i < 2)
-					m_time.SetPos((100 - 48 * i) + 64 * 7, 80 + 64 * j);
+					m_time.SetPos((100 - 48 * i) + 64 * 7, 80 + 64 * j-30);
 				else
-					m_time.SetPos((100 - 48 * (i + 1)) + 64 * 7, 80 + 64 * j);
+					m_time.SetPos((100 - 48 * (i + 1)) + 64 * 7, 80 + 64 * j-30);
 				m_time.Draw();
 			}
 		}
 	}
 
-	m_result_text.Draw(128, 64 * 10, 0, 0, 0, "Enter:Next Game  Space:Title");
+	m_result_text.Draw(128, 64 * 10-30, 0, 0, 0, "Enter:Next Game  Space:Title");
 }
