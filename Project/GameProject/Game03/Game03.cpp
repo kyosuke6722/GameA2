@@ -11,10 +11,9 @@
 Game03::Game03():Base(eType_Scene){
 	m_cnt = 0;
 	m_enemy_flag =true;
-	//Base::Add(new Field03());
+	Base::Add(new Field03());
 	Base::Add(new Map());
 	Base::Add(new Player03(CVector2D(72* 11, 72 * 20),false));
-	//Base::Add(new Player03(CVector2D(72 * 11, 72 * 10), false));
 	Base::Add(new Enemy03(CVector2D(72*25,72*20), true));
 	Base::Add(new Enemy03(CVector2D(72 * 38, 72 * 20), true));
 	Base::Add(new Enemy03(CVector2D(72 * 15, 72 * 10), true));
