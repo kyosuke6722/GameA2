@@ -14,7 +14,7 @@ Game04::Game04():Base(eType_Scene) {
 	Base::Add(new Enemy04(CVector2D(32 * 25, 32 * 13)));
 	Base::Add(new Enemy04(CVector2D(32 * 35, 32 * 6)));
 	Base::Add(new Player04(CVector2D(32 * 3, 32 * 4)));
-
+	m_cnt = 0;
 	Base::Add(new Map04());
 	Base::Add(new UI04());
 
@@ -23,6 +23,7 @@ Game04::Game04():Base(eType_Scene) {
 Game04::~Game04()
 {
 	Base::KillAll();
+	SOUND("BGM_Game04")->Pause();
 	Result::finish_game = 4;
 	Base::Add(new Result());
 }
@@ -32,7 +33,14 @@ Game04::~Game04()
 
 
 void Game04::Update()
-{if (!Base::FindObject(eType_Enemy)) {
+
+{
+	if (m_cnt-- <= 0)
+	{
+		SOUND("BGM_Game04")->Play();
+		m_cnt = 71 * 60;
+}
+	if (!Base::FindObject(eType_Enemy)) {
 		SetKill();
 	}
 	else {

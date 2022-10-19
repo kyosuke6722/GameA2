@@ -5,7 +5,8 @@ class Game04 :public Base {
 public:
 	 Game04();
 	~Game04();
-	
+	int m_cnt;
+
 	
 
 	void Update();
