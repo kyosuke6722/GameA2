@@ -27,10 +27,15 @@ Bullet02::Bullet02(int Type, const CVector2D& pos, float ang, float speed)
 
 void Bullet02::Update() {
 	//’e‚Ì‘¬‚³
-	//const int move_speed1 = 4;
-	//m_pos.y -= move_speed1;
-	m_vec = CVector2D(sin(m_ang), cos(m_ang)) * m_speed;
-	m_pos += m_vec;
+	const int move_speed = 4;
+	if (m_type == eType_Player_Attack) {
+		m_pos.y -= move_speed;
+	}
+	if (m_type == eType_Enemy_Attack) {
+		m_pos.y += move_speed;
+	}
+	//m_vec = CVector2D(sin(m_ang), cos(m_ang)) * m_speed;
+	//m_pos += m_vec;
 }
 
 void Bullet02::Draw() {
@@ -43,12 +48,12 @@ void Bullet02::Collision(Base* b) {
 
 	//‘ÎÛ‚ÌƒIƒuƒWƒFƒNƒg‚ÌŽí—Þ‚É‚æ‚Á‚Ä•ªŠò
 	switch (b->m_type) {
-		//“G‚Ìê‡
+	
 	case eType_Player:
 
 		//‰~“¯Žm‚Ì”»’èiŽ©•ªA‘ÎÛ‚‚j
 		if (m_type == eType_Enemy_Attack && Base::CollisionCircle(this, b)) {
-			//m_pos.y += 4;
+			//m_pos.y -= 4;
 			//b->SetKill();
 			SetKill();
 			Base::Add(new Effect02(b->m_pos));
@@ -60,11 +65,11 @@ void Bullet02::Collision(Base* b) {
 
 		//‰~“¯Žm‚Ì”»’èiŽ©•ªA‘ÎÛ‚‚j
 		if (m_type == eType_Player_Attack && Base::CollisionCircle(this, b)) {
-			m_pos.y += 4;
+			//m_pos.y += 4;
 			b->SetKill();
 			SetKill();
 			Base::Add(new Effect02(b->m_pos));
-			GameData02::s_score += 100;
+			GameData02::s_score += 200;
 		}
 		break;
 

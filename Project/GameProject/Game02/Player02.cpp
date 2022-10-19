@@ -12,6 +12,7 @@ Player02::Player02(const CVector2D& pos) : Base(eType_Player) {
 }
 
 void Player02::Update() {
+	m_cnt++;
 	//‘¬“x
 	const int move_speed = 4;
 	//‰E
@@ -27,12 +28,11 @@ void Player02::Update() {
 	if (HOLD(CInput::eDown))
 		m_pos.y += move_speed;
 	//’e
-	if (PUSH(CInput::eButton3)) {
-		//Player_Attack();
-		//m_img.Load("Image/Bullet.png");
-		
-		Base::Add(new Bullet02(eType_Player_Attack, m_pos, m_ang, 4));
-		//m_pos.y += 4;
+	if (PUSH(CInput::eButton5)) {
+		if (m_cnt >= 40) {
+				Base::Add(new Bullet02(eType_Player_Attack, m_pos, m_ang, 4));
+			m_cnt = 0;
+		}
 	}
 }
 

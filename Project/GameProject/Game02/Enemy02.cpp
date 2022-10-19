@@ -19,7 +19,6 @@ void Enemy02::Update() {
 	if (m_cnt >= 120) {
 		//移動
 		m_pos.y += move_speed;
-		//カウントリセット
 		
 	}
 	//弾
