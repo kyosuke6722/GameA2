@@ -19,7 +19,9 @@ void Enemy02::Update() {
 	if (m_cnt >= 120) {
 		//ˆÚ“®
 		m_pos.y += move_speed;
-		
+		if (m_pos.y >= 720) {
+			SetKill();
+		}
 	}
 	//’e
 	if (m_cnt >= 180) {
