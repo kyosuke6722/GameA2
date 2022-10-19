@@ -120,7 +120,7 @@ void Init(void)
 	//-----------------------------------------------------
 	//Title(íSìñ:è¨éR)
 	//-----------------------------------------------------
-	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title2.png"));
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	ADD_RESOURCE("Anatora", CImage::CreateImage("Image/anatora.png"));
 

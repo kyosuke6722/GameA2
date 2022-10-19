@@ -32,9 +32,9 @@ void Game03::Update(){
 	Player03* p = dynamic_cast<Player03*>(Base::FindObject(eType_Player));
 	if (p) {
 		if (p->m_pos.x < 72 * 13 && p->m_pos.y < 72 * 12&&m_enemy_flag) {
-			Base::Add(new Enemy03(CVector2D(72 * 5, 72 * 4), true));
-			Base::Add(new Enemy03(CVector2D(72 * 7, 72 * 4), true));
-			Base::Add(new Enemy03(CVector2D(72 * 17, 72 * 4), false));
+			Base::Add(new Enemy03(CVector2D(72 * 5, 72 * 5), true));
+			Base::Add(new Enemy03(CVector2D(72 * 7, 72 * 5), true));
+			Base::Add(new Enemy03(CVector2D(72 * 17, 72 * 5), false));
 			m_enemy_flag = false;
 		}
 	}

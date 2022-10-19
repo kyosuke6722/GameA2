@@ -35,9 +35,10 @@ void Title::Update(){
 }
 
 void Title::Draw() {
+	m_img.SetSize(1280, 720);
 	m_img.Draw();
-	m_title_text.Draw(64, 256, 0, 0, 0, "W:Game01");
-	m_title_text.Draw(64, 320, 0, 0, 0, "D:Game02");
-	m_title_text.Draw(64, 384, 0, 0, 0, "S:Game03");
-	m_title_text.Draw(64, 448, 0, 0, 0, "A:Game04");
+	m_title_text.Draw(640-64*2, 70, 0, 0, 0, "W:Game01");
+	m_title_text.Draw(1280-64*6, 64*4, 0, 0, 0, "D:Game02");
+	m_title_text.Draw(640-64*2, 720-8, 0, 0, 0, "S:Game03");
+	m_title_text.Draw(100, 64*8, 0, 0, 0, "A:Game04");
 }
