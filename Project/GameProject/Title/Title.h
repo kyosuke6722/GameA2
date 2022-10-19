@@ -3,7 +3,8 @@
 
 class Title :public Base {
 private:
-	CImage m_img;
+	CImage m_img;//背景
+	CImage m_title;//タイトル画像「あなぶきリミックス」
 	CFont m_title_text;
 public:
 	Title();
