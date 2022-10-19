@@ -16,7 +16,7 @@ void UI02::Draw() {
 		m_img.Draw();
 	}
 
-	int time = GameData02::t_time /= 60;
+	int time = GameData02::t_time / 60;
 	int t = 0;
 	for (int i = 0; i < 4; i++) {
 		if (i < 1) {

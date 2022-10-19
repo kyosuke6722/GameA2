@@ -8,24 +8,35 @@
 #include"../Title/Result.h"
 
 Game02::Game02() :Base(eType_Scene) {
-	Base::Add(new Player02(CVector2D(640, 700)));
+	Base::Add(new Player02(CVector2D(640, 600)));
 	m_cnt = 0;
 	Base::Add(new UI02());
 }
 
 void Game02::Update() {
+	GameData02::t_time++;
 	m_cnt++;
-	GameData02 :: t_time++;
 	if (m_cnt >= 180) {
-		Base::Add(new Enemy02(CVector2D(500, 200)));
-		Base::Add(new Enemy02(CVector2D(600, 150)));
-		Base::Add(new Enemy02(CVector2D(700, 100)));
-		Base::Add(new Enemy02(CVector2D(800, 50)));
-		Base::Add(new Enemy02(CVector2D(900, 0)));
+		//Base::Add(new Enemy02(CVector2D(100, 200)));
+		//Base::Add(new Enemy02(CVector2D(200, 150)));
+		Base::Add(new Enemy02(CVector2D(300, 100)));
+		Base::Add(new Enemy02(CVector2D(400, 50)));
+		Base::Add(new Enemy02(CVector2D(500, 0)));
+		Base::Add(new Enemy02(CVector2D(600, 200)));
+		Base::Add(new Enemy02(CVector2D(700, 150)));
+		Base::Add(new Enemy02(CVector2D(800, 100)));
+		//Base::Add(new Enemy02(CVector2D(900, 50)));
+		//Base::Add(new Enemy02(CVector2D(1000, 0)));
 		m_cnt = 0;
+	}
+	if (GameData02::s_score >= 5000) {
+		SetKill();
 	}
 }
 
-Game02::~Game02(){
-
+Game02::~Game02()
+{
+	Base::KillAll();
+	Result::finish_game = 2;
+	Base::Add(new Result());
 }
