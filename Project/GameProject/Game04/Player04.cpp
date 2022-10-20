@@ -65,6 +65,7 @@ void Player04::Collision(Base* b)
 		}
 	case eType_Enemy:
 		if (Base::CollisionCircle(this, b))
+			SOUND("SE_Cannon")->Play();
 			m_pos = m_pos_old;
 		break;
 
