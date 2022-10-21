@@ -29,7 +29,7 @@ void Player02::Update() {
 		m_pos.y += move_speed;
 	//’e
 	if (PUSH(CInput::eButton5)) {
-		if (m_cnt >= 40) {
+		if (m_cnt >= 50) {
 				Base::Add(new Bullet02(eType_Player_Attack, m_pos, m_ang, 4));
 			m_cnt = 0;
 		}

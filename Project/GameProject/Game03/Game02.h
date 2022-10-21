@@ -4,7 +4,6 @@ class Game02 : public Base {
 private:
 	int m_cnt;
 	int t_time;
-	//int i;
 public:
 	Game02(bool tuto);
 	~Game02();

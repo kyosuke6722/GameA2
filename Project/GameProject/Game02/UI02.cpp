@@ -1,5 +1,6 @@
 #include "UI02.h"
 #include "GameData02.h"
+#include "../Game03/Game02.h"
 
 UI02::UI02() :Base(eType_UI) {
 	//m_img.Load("Image/UI.png");
@@ -41,4 +42,16 @@ void UI02::Draw() {
 			m_img.SetPos(100 + 32 - 24 * (i + 1), 32);
 		m_img.Draw();
 	}
+
+	Game02* g = dynamic_cast<Game02*>(Base::FindObject(eType_Scene));
+	if (g) {
+		if (g->m_is_tuto) {
+			m_text.Draw(0, 720 - (32 * 5), 255, 255, 255, "A:¶ˆÚ“®");
+			m_text.Draw(0, 720 - (32 * 4), 255, 255, 255, "D:‰EˆÚ“®");
+			m_text.Draw(0, 720 - (32 * 3), 255, 255, 255, "W:ãˆÚ“®");
+			m_text.Draw(0, 720 - (32 * 2), 255, 255, 255, "S:‰ºˆÚ“®");
+			m_text.Draw(0, 720 - (32 * 6), 255, 255, 255, "SPACE:UŒ‚");
+		}
+	}
+
 }

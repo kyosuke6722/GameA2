@@ -16,8 +16,8 @@ Game02::Game02(bool tuto) :Base(eType_Scene) {
 
 void Game02::Update() {
 	GameData02::t_time++;
-	m_cnt++;
-	if (m_cnt >= 180) {
+	m_cnt--;
+	if (m_cnt <= 0) {
 		//Base::Add(new Enemy02(CVector2D(100, 200)));
 		Base::Add(new Enemy02(CVector2D(200, 150)));
 		Base::Add(new Enemy02(CVector2D(300, 100)));
@@ -28,7 +28,7 @@ void Game02::Update() {
 		Base::Add(new Enemy02(CVector2D(800, 100)));
 		Base::Add(new Enemy02(CVector2D(900, 50)));
 		//Base::Add(new Enemy02(CVector2D(1000, 0)));
-		m_cnt = 0;
+		m_cnt = 180;
 	}
 	if (GameData02::s_score >= 5000) {
 		SetKill();
