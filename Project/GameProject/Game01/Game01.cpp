@@ -23,6 +23,10 @@ Game01::~Game01()
 	Base::KillAll();
 	Result::finish_game = 1;
 	Base::Add(new Result(m_is_tuto));
+	GameData01::point[0] =  0 ;
+	 GameData01::point[1] =  0;
+
+
 }
 
 void Game01::Update()
@@ -34,6 +38,7 @@ void Game01::Update()
 
 	}
 	if (GameData01::game_state ==1) {
+
 		GameData01::t_time++;
 		
 	}

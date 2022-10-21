@@ -80,6 +80,7 @@ void Init(void)
 	ADD_RESOURCE("background", CImage::CreateImage("Image/Game01_background.png"));
 	SOUND("BGM_Game01")->Load("Sound/BGM/BGM_Game01.wav", 1);
 	SOUND("SE_Hit01")->Load("Sound/SE/SE_Hit_01.wav", 1);
+	SOUND("SE_Get01")->Load("Sound/SE/SE_Get_01.wav", 1);
 	//-----------------------------------------------------
 	//Game02(’S“–:—Ñ)
 	//-----------------------------------------------------
