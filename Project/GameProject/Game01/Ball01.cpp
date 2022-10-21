@@ -38,7 +38,7 @@ void Ball01::Update()
 		}
 		//プレイヤー側ゴール
 		if (m_pos.x > 1280 - 32) {
-			SOUND("SE_Get_01")->Play(); 
+			SOUND("SE_Get01")->Play(); 
 			GameData01::point[0]++;
 			GameData01::game_state = 0;
 			m_vec = CVector2D(-4,4);
