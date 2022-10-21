@@ -12,6 +12,7 @@ Result::Result(bool tuto):Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\
 	m_img = COPY_RESOURCE("Result", CImage);
 	m_time = COPY_RESOURCE("UI", CImage);
 	m_time.SetSize(48, 48);
+	total_time = 0;
 	anatora = COPY_RESOURCE("Anatora", CImage);
 	m_is_tuto = tuto;
 	if (finish_game == 4&&!m_is_tuto)//4種目制覇したとき
@@ -24,11 +25,14 @@ int Result::finish_game = 0;
 Result::~Result(){
 	//ゲーム終了
 	if(m_is_tuto||finish_game==4) {
+		if (Title::best_time < total_time*60) {
+			Title::best_time = total_time*60;//ベストタイム更新
+		}
 	GameData01::t_time = 0;
 	GameData02::t_time = 0;
 	GameData03::t_time = 0;
 	GameData04::t_time = 0;
-	Base::Add(new Title());
+ 	Base::Add(new Title());
 	}
 	//次のゲームへ
 	else if (finish_game == 1) {
@@ -48,7 +52,7 @@ void Result::Update(){
 		SetKill();
 	}
 	//spaceを押すとタイトルへ
-	if (PUSH(CInput::eButton5)) {
+	if (PUSH(CInput::eButton2)) {
 		finish_game = 4;
 		SetKill();
 	}
@@ -62,18 +66,14 @@ void Result::Draw() {
 	for (int i = 3; i <= 6; i++) {
 		m_result_text.Draw(128, 64 * i-30, 0, 0, 0, "Game0%d:", i - 2);
 	}
-	m_result_text.Draw(128+30, 64 * 8-30, 0, 0, 0, "Total:");
 
-	for (int j = 1; j <= 6; j++) {
+	for (int j = 1; j <= 4; j++) {
 		int time = 0;
 		int t = 0;
 		if      (j == 1)time = GameData01::t_time / 60;
 		else if (j == 2)time = GameData02::t_time / 60;
 		else if (j == 3)time = GameData03::t_time / 60;
 		else if (j == 4)time = GameData04::t_time / 60;
-		else            time = GameData01::t_time / 60 + GameData02::t_time / 60 +
-			                   GameData03::t_time / 60 + GameData04::t_time / 60;
-		if (j != 5) {
 			for (int i = 0; i < 4; i++) {
 				if (i < 1) {
 					t = time % 10;
@@ -96,8 +96,35 @@ void Result::Draw() {
 					m_time.SetPos((100 - 48 * (i + 1)) + 64 * 7, 80 + 64 * j-30);
 				m_time.Draw();
 			}
-		}
 	}
 
-	m_result_text.Draw(128, 64 * 10-30, 0, 0, 0, "Enter:Next Game  Space:Title");
+	if (!m_is_tuto) {
+		total_time = GameData01::t_time/60 + GameData02::t_time/60 + GameData03::t_time/60 + GameData04::t_time/60;
+		int time = total_time;
+		int t = 0;
+		for (int i = 0; i < 4; i++) {
+			if (i < 1) {
+				t = total_time % 10;
+				time /= 10;
+			}
+			else if (i < 2) {
+				t = time % 6;
+			}
+			else if (i < 3) {
+				t = time / 6;
+				time /= 6;
+			}
+			else {
+				t = time / 10;
+			}
+			m_time.SetRect(16 * t, 16, 16 * t + 16, 32);
+			if (i < 2)
+				m_time.SetPos((100 - 48 * i) + 64 * 7, 80 + 64 * 6 - 30);
+			else
+				m_time.SetPos((100 - 48 * (i + 1)) + 64 * 7, 80 + 64 * 6 - 30);
+			m_time.Draw();
+		}
+		m_result_text.Draw(128 + 30, 64 * 8 - 30, 0, 0, 0, "Total:");
+	}
+	m_result_text.Draw(128, 64 * 10-30, 0, 0, 0, "Enter:Next Game  X:Title");
 }

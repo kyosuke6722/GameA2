@@ -14,4 +14,5 @@ public:
 	void Update();
 	void Draw();
 	static int finish_game;
+	int total_time;
 };

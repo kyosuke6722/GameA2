@@ -4,14 +4,17 @@
 #include"../Game03/Game03.h"
 #include"../Game04/Game04.h"
 
-Title::Title():Base(eType_Scene),m_title_text("C:\\Windows\\Fonts\\msgothic.ttc",64) {
+Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	m_img1 = COPY_RESOURCE("Title1", CImage);
 	m_img2 = COPY_RESOURCE("Title2", CImage);
+	m_time = COPY_RESOURCE("UI", CImage);
+	m_time.SetSize(48, 48);
 	m_title = COPY_RESOURCE("Title_text", CImage);
-	m_title.SetSize(560*1.2,86*1.2);
+	m_title.SetSize(560 * 1.2, 86 * 1.2);
 	title_flag = false;
 	SOUND("BGM_Title")->Play();
 }
+int Title::best_time = 0;
 
 Title::~Title(){
 	SOUND("BGM_Menu")->Pause();
@@ -77,5 +80,31 @@ void Title::Draw() {
 		m_title.SetPos(640-320, 360-100);
 		m_title.Draw();
 		m_title_text.Draw(640 - 160, 400, 0, 0, 0, "PUSH:Enter");
+	}
+
+	m_title_text.Draw(1280-64*5, 650, 0, 0, 0, "BEST TIME");
+	int time = best_time/60;
+	int t = 0;
+	for (int i = 0; i < 4; i++) {
+		if (i < 1) {
+			t = time % 10;
+			time /= 10;
+		}
+		else if (i < 2) {
+			t = time % 6;
+		}
+		else if (i < 3) {
+			t = time / 6;
+			time /= 6;
+		}
+		else {
+			t = time / 10;
+		}
+		m_time.SetRect(16 * t, 32, 16 * t + 16, 48);
+		if (i < 2)
+			m_time.SetPos(1200 - 48 * i, 650);
+		else
+			m_time.SetPos(1200 - 48 * (i + 1), 650);
+		m_time.Draw();
 	}
 }

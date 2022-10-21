@@ -26,7 +26,7 @@ Game03::~Game03(){
 	Base::KillAll();
 	SOUND("BGM_Game03")->Pause();
 	Result::finish_game = 3;
-	Base::Add(new Result(m_is_tuto));
+	Base::Add(new Result(false));
 }
 
 void Game03::Update(){
