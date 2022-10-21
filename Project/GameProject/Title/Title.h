@@ -4,6 +4,7 @@
 class Title :public Base {
 private:
 	CImage m_img1;
+	CImage anatora;
 	CImage m_img2;//背景
 	CImage m_time;
 	CImage m_title;//タイトル画像「あなぶきリミックス」

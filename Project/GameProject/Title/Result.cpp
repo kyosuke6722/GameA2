@@ -25,8 +25,8 @@ int Result::finish_game = 0;
 Result::~Result(){
 	//ゲーム終了
 	if(m_is_tuto||finish_game==4) {
-		if (Title::best_time < total_time*60) {
-			Title::best_time = total_time*60;//ベストタイム更新
+		if (Title::best_time > total_time) {
+			Title::best_time = total_time;//ベストタイム更新
 		}
 	GameData01::t_time = 0;
 	GameData02::t_time = 0;

@@ -6,6 +6,7 @@
 
 Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	m_img1 = COPY_RESOURCE("Title1", CImage);
+	anatora = COPY_RESOURCE("Anatora", CImage);
 	m_img2 = COPY_RESOURCE("Title2", CImage);
 	m_time = COPY_RESOURCE("UI", CImage);
 	m_time.SetSize(48, 48);
@@ -14,7 +15,7 @@ Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 	title_flag = false;
 	SOUND("BGM_Title")->Play();
 }
-int Title::best_time = 0;
+int Title::best_time =6000*60;
 
 Title::~Title(){
 	SOUND("BGM_Menu")->Pause();
@@ -77,13 +78,15 @@ void Title::Draw() {
 	}
 	else {
 		m_img1.Draw();
-		m_title.SetPos(640-320, 360-100);
+		anatora.SetPos(640 + 300, 360-120);
+		anatora.Draw();
+		m_title.SetPos(640-340, 360-100);
 		m_title.Draw();
 		m_title_text.Draw(640 - 160, 400, 0, 0, 0, "PUSH:Enter");
 	}
 
 	m_title_text.Draw(1280-64*5, 650, 0, 0, 0, "BEST TIME");
-	int time = best_time/60;
+	int time = best_time;
 	int t = 0;
 	for (int i = 0; i < 4; i++) {
 		if (i < 1) {
