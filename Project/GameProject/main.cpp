@@ -112,7 +112,8 @@ void Init(void)
 	ADD_RESOURCE("Enemy04", CImage::CreateImage("Image/Enemy04.png"));
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	SOUND("BGM_Game04")->Load("Sound/BGM/BGM_Game04.wav", 1);
-
+	SOUND("SE_Cannon")->Load("Sound/SE/SE_Cannon04.wav", 1);
+	
 
 
 
