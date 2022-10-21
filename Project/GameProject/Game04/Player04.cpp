@@ -40,7 +40,7 @@ void Player04::Update()
 	m_ang = atan2(vec.x, vec.y);
 
 	if (PUSH(CInput::eMouseL)) {
-		SOUND("SE_Cannon")->Play();
+		SOUND("SE_Cannon04")->Play();
 		Base::Add(new Bullet04(eType_Player_Attack, m_pos, m_ang, 4));
 
 	}
