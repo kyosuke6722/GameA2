@@ -63,9 +63,9 @@ void UI01::Draw()
 	Game01* g = dynamic_cast<Game01*>(Base::FindObject(eType_Scene));
 	if (g) {
 		if (g->m_is_tuto) {
-			m_text.Draw(90, 720 - (32 * 1), 255, 255, 255, "A:左移動");
-			m_text.Draw(90, 720 - (32 * 0), 255, 255, 255, "S:下移動");
-			
+			m_text.Draw(90, 720 - (32 * 2), 255, 255, 255, "W:上移動");
+			m_text.Draw(90, 720 - (32 * 1), 255, 255, 255, "S:下移動");
+			m_text.Draw(90, 720 - (32 * 0), 255, 255, 255, "Z:ゲームスタート");
 		}
 	}
 
