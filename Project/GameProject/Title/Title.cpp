@@ -17,25 +17,32 @@ Title::~Title(){
 
 void Title::Update(){
 	if (title_flag) {
-		if (PUSH(CInput::eUp) || PUSH(CInput::eButton10)) {
+		//本番
+		if ( PUSH(CInput::eButton10)) {
 			SetKill();
 			Base::KillAll();
-			Base::Add(new Game01());
+			Base::Add(new Game01(false));
+		}
+		//各種チュートリアル
+		if (PUSH(CInput::eUp)) {
+			SetKill();
+			Base::KillAll();
+			Base::Add(new Game01(true));
 		}
 		if (PUSH(CInput::eRight)) {
 			SetKill();
 			Base::KillAll();
-			Base::Add(new Game02());
+			Base::Add(new Game02(true));
 		}
 		if (PUSH(CInput::eDown)) {
 			SetKill();
 			Base::KillAll();
-			Base::Add(new Game03());
+			Base::Add(new Game03(true));
 		}
 		if (PUSH(CInput::eLeft)) {
 			SetKill();
 			Base::KillAll();
-			Base::Add(new Game04());
+			Base::Add(new Game04(true));
 		}
 	}
 	else {

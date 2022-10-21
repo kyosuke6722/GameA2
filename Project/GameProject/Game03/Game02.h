@@ -6,7 +6,8 @@ private:
 	int t_time;
 	//int i;
 public:
-	Game02();
+	Game02(bool tuto);
 	~Game02();
 	void Update();
+	bool m_is_tuto;//チュートリアル(tutorial)フラグ
 };

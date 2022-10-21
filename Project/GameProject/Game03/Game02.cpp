@@ -7,10 +7,11 @@
 #include "../Game02/GameData02.h"
 #include"../Title/Result.h"
 
-Game02::Game02() :Base(eType_Scene) {
+Game02::Game02(bool tuto) :Base(eType_Scene) {
 	Base::Add(new Player02(CVector2D(640, 600)));
 	m_cnt = 0;
 	Base::Add(new UI02());
+	m_is_tuto = tuto;
 }
 
 void Game02::Update() {
@@ -38,5 +39,5 @@ Game02::~Game02()
 {
 	Base::KillAll();
 	Result::finish_game = 2;
-	Base::Add(new Result());
+	Base::Add(new Result(m_is_tuto));
 }

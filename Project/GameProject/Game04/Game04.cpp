@@ -5,7 +5,7 @@
 #include"UI04.h"
 #include"../Title/Result.h"
 #include"Map04.h"
-Game04::Game04():Base(eType_Scene) {
+Game04::Game04(bool tuto):Base(eType_Scene) {
 	Base::Add(new Enemy04(CVector2D(32 * 3, 32 * 8)));
 	Base::Add(new Enemy04(CVector2D(32 * 17, 32 * 14)));
 	Base::Add(new Enemy04(CVector2D(3 * 37, 32 * 10)));
@@ -19,6 +19,7 @@ Game04::Game04():Base(eType_Scene) {
 	m_cnt = 0;
 	Base::Add(new Map04());
 	Base::Add(new UI04());
+	m_is_tuto = tuto;
 
 }
 
@@ -27,7 +28,7 @@ Game04::~Game04()
 	Base::KillAll();
 	SOUND("BGM_Game04")->Pause();
 	Result::finish_game = 4;
-	Base::Add(new Result());
+	Base::Add(new Result(m_is_tuto));
 }
 
 

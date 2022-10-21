@@ -7,8 +7,9 @@ private:
 	CImage m_time;
 	CImage anatora;
 	CFont m_result_text;
+	bool m_is_tuto;
 public:
-	Result();
+	Result(bool tuto);
 	~Result();
 	void Update();
 	void Draw();

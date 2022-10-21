@@ -8,12 +8,13 @@
 #include"../Game04/Game04.h"
 #include"../Game04/GameData04.h"
 
-Result::Result():Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
+Result::Result(bool tuto):Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	m_img = COPY_RESOURCE("Result", CImage);
 	m_time = COPY_RESOURCE("UI", CImage);
-	anatora = COPY_RESOURCE("Anatora", CImage);
 	m_time.SetSize(48, 48);
-	if (finish_game == 4)
+	anatora = COPY_RESOURCE("Anatora", CImage);
+	m_is_tuto = tuto;
+	if (finish_game == 4&&!m_is_tuto)//4種目制覇したとき
 		SOUND("SE_AllClear")->Play();
 	else
 		SOUND("SE_Clear")->Play();
@@ -21,21 +22,23 @@ Result::Result():Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\msgothic.
 int Result::finish_game = 0;
 
 Result::~Result(){
-	if (finish_game == 1) {
-		Base::Add(new Game02());
+	//ゲーム終了
+	if(m_is_tuto||finish_game==4) {
+	GameData01::t_time = 0;
+	GameData02::t_time = 0;
+	GameData03::t_time = 0;
+	GameData04::t_time = 0;
+	Base::Add(new Title());
+	}
+	//次のゲームへ
+	else if (finish_game == 1) {
+		Base::Add(new Game02(true));
 	}
 	else if(finish_game==2){
-		Base::Add(new Game03());
+		Base::Add(new Game03(true));
 	}
 	else if (finish_game == 3) {
-		Base::Add(new Game04());
-	}
-	else{
-		GameData01::t_time = 0;
-		GameData02::t_time = 0;
-		GameData03::t_time = 0;
-		GameData04::t_time = 0;
-		Base::Add(new Title());
+		Base::Add(new Game04(true));
 	}
 }
 
@@ -46,7 +49,7 @@ void Result::Update(){
 	}
 	//spaceを押すとタイトルへ
 	if (PUSH(CInput::eButton5)) {
-		finish_game = 5;
+		finish_game = 4;
 		SetKill();
 	}
 }

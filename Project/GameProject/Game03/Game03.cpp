@@ -8,9 +8,10 @@
 #include"UI03.h"
 #include"../Title/Result.h"
 
-Game03::Game03():Base(eType_Scene){
+Game03::Game03(bool tuto):Base(eType_Scene){
 	m_cnt = 0;
 	m_enemy_flag =true;
+	m_is_tuto = tuto;
 	Base::Add(new Field03());
 	Base::Add(new Map());
 	Base::Add(new Player03(CVector2D(72* 11, 72 * 20),false));
@@ -25,7 +26,7 @@ Game03::~Game03(){
 	Base::KillAll();
 	SOUND("BGM_Game03")->Pause();
 	Result::finish_game = 3;
-	Base::Add(new Result());
+	Base::Add(new Result(m_is_tuto));
 }
 
 void Game03::Update(){
