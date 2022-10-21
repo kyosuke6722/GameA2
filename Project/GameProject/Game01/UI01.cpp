@@ -1,5 +1,6 @@
 #include "UI01.h"
 #include"GameData01.h"
+#include "Game01.h"
 
 
 
@@ -58,4 +59,14 @@ void UI01::Draw()
 			m_img.SetPos(640+48 - 24 * (i + 1), 48);
 		m_img.Draw();
 	}
+	//チュートリアル用操作説明
+	Game01* g = dynamic_cast<Game01*>(Base::FindObject(eType_Scene));
+	if (g) {
+		if (g->m_is_tuto) {
+			m_text.Draw(90, 720 - (32 * 1), 255, 255, 255, "A:左移動");
+			m_text.Draw(90, 720 - (32 * 0), 255, 255, 255, "S:下移動");
+			
+		}
+	}
+
 }

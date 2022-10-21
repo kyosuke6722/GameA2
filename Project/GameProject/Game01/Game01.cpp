@@ -14,7 +14,7 @@ Game01::Game01(bool tuto)
 	Base::Add(new Player01(CVector2D(0, 300)));
 	Base::Add(new Enemy01(CVector2D(1280 - 32,300)));
 	Base::Add(new UI01());
-	SOUND("BGM_Game01")->Play();
+	SOUND("BGM_Game01")->Play(true);
 	m_is_tuto = tuto;
 }
 Game01::~Game01()

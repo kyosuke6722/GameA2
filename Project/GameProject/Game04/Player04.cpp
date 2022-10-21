@@ -40,6 +40,7 @@ void Player04::Update()
 	m_ang = atan2(vec.x, vec.y);
 
 	if (PUSH(CInput::eMouseL)) {
+		SOUND("SE_Cannon")->Play();
 		Base::Add(new Bullet04(eType_Player_Attack, m_pos, m_ang, 4));
 
 	}
@@ -65,7 +66,7 @@ void Player04::Collision(Base* b)
 		}
 	case eType_Enemy:
 		if (Base::CollisionCircle(this, b))
-			SOUND("SE_Cannon")->Play();
+		
 			m_pos = m_pos_old;
 		break;
 
