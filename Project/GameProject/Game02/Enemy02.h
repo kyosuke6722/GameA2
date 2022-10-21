@@ -2,8 +2,6 @@
 #include "../Base/Base.h"
 
 class Enemy02 : public Base {
-//private:
-	//int m_cnt;
 public:
 	CImage m_img;
 	int m_cnt;

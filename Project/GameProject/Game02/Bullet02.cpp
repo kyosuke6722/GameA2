@@ -14,10 +14,6 @@ Bullet02::Bullet02(int Type, const CVector2D& pos, float ang, float speed)
 	m_pos = pos;
 	m_ang = ang;
 	m_speed = speed;
-	//半径
-	//m_rad = 12;
-	//表示サイズ
-	//m_img.SetSize(32, 32);
 	//画像の中心に設定
 	m_img.SetCenter(16, 16);
 }
@@ -53,8 +49,6 @@ void Bullet02::Collision(Base* b) {
 
 		//円同士の判定（自分、対象ｂ）
 		if (m_type == eType_Enemy_Attack && Base::CollisionCircle(this, b)) {
-			//m_pos.y -= 4;
-			//b->SetKill();
 			SetKill();
 			Base::Add(new Effect02(b->m_pos));
 			GameData02::t_time += 600;
@@ -65,7 +59,6 @@ void Bullet02::Collision(Base* b) {
 
 		//円同士の判定（自分、対象ｂ）
 		if (m_type == eType_Player_Attack && Base::CollisionCircle(this, b)) {
-			//m_pos.y += 4;
 			b->SetKill();
 			SetKill();
 			Base::Add(new Effect02(b->m_pos));
