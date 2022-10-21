@@ -3,7 +3,6 @@
 
 class Game03 :public Base {
 private:
-	int m_cnt;//BGMループ用カウント
 	bool m_enemy_flag;//敵出現フラグ
 public:
 	Game03(bool tuto);

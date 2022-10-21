@@ -10,44 +10,55 @@ Title::Title():Base(eType_Scene),m_title_text("C:\\Windows\\Fonts\\msgothic.ttc"
 	m_title = COPY_RESOURCE("Title_text", CImage);
 	m_title.SetSize(560*1.2,86*1.2);
 	title_flag = false;
+	SOUND("BGM_Title")->Play();
 }
 
 Title::~Title(){
+	SOUND("BGM_Menu")->Pause();
 }
 
 void Title::Update(){
 	if (title_flag) {
 		//本番
 		if ( PUSH(CInput::eButton10)) {
+			SOUND("SE_Button2")->Play();
 			SetKill();
 			Base::KillAll();
 			Base::Add(new Game01(false));
 		}
 		//各種チュートリアル
 		if (PUSH(CInput::eUp)) {
+			SOUND("SE_Button2")->Play();
 			SetKill();
 			Base::KillAll();
 			Base::Add(new Game01(true));
 		}
 		if (PUSH(CInput::eRight)) {
+			SOUND("SE_Button2")->Play();
 			SetKill();
 			Base::KillAll();
 			Base::Add(new Game02(true));
 		}
 		if (PUSH(CInput::eDown)) {
+			SOUND("SE_Button2")->Play();
 			SetKill();
 			Base::KillAll();
 			Base::Add(new Game03(true));
 		}
 		if (PUSH(CInput::eLeft)) {
+			SOUND("SE_Button2")->Play();
 			SetKill();
 			Base::KillAll();
 			Base::Add(new Game04(true));
 		}
 	}
 	else {
-		if (PUSH(CInput::eButton10))
+		if (PUSH(CInput::eButton10)) {
+			SOUND("BGM_Title")->Pause();
+			SOUND("SE_Button1")->Play();
 			title_flag = true;
+			SOUND("BGM_Menu")->Play(true);
+		}
 	}
 }
 

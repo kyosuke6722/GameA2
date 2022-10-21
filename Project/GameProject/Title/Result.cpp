@@ -32,13 +32,13 @@ Result::~Result(){
 	}
 	//Ÿ‚ÌƒQ[ƒ€‚Ö
 	else if (finish_game == 1) {
-		Base::Add(new Game02(true));
+		Base::Add(new Game02(false));
 	}
 	else if(finish_game==2){
-		Base::Add(new Game03(true));
+		Base::Add(new Game03(false));
 	}
 	else if (finish_game == 3) {
-		Base::Add(new Game04(true));
+		Base::Add(new Game04(false));
 	}
 }
 

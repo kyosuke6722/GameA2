@@ -9,7 +9,6 @@
 #include"../Title/Result.h"
 
 Game03::Game03(bool tuto):Base(eType_Scene){
-	m_cnt = 0;
 	m_enemy_flag =true;
 	m_is_tuto = tuto;
 	Base::Add(new Field03());
@@ -20,6 +19,7 @@ Game03::Game03(bool tuto):Base(eType_Scene){
 	Base::Add(new Enemy03(CVector2D(72 * 15, 72 * 10), true));
 	Base::Add(new Goal03(CVector2D(72*4,72*8+20)));
 	Base::Add(new UI03());
+	SOUND("BGM_Game03")->Play(true);
 }
 
 Game03::~Game03(){
@@ -39,11 +39,7 @@ void Game03::Update(){
 			m_enemy_flag = false;
 		}
 	}
-	if (m_cnt-- <= 0) {
-		SOUND("BGM_Game03")->Play();
-		m_cnt = 37 * 60;
-	}
-	
+
 	if (!Base::FindObject(eType_Goal)) {
 		SetKill();
 	}
