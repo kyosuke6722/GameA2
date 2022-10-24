@@ -43,13 +43,14 @@ void Bullet04::Collision(Base* b)
 	case eType_Player:
 
 		if (m_type == eType_Enemy_Attack && Base::CollisionCircle(this, b)) {
-			SOUND("SE_Hit01")->Play();
+			SOUND("SE_Hit")->Play();
 			SetKill();
 			GameData04::t_time += 600;
 		}
 		break;
 	case eType_Enemy:
 		if (m_type == eType_Player_Attack && Base::CollisionCircle(this, b)) {
+			SOUND("SE_Bomb")->Play();
 			SetKill();
 			b->SetKill();
 		}

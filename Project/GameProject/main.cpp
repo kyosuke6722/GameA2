@@ -69,6 +69,8 @@ void Init(void)
 	SOUND("SE_AllClear")->Load("Sound/SE/SE_AllClear.wav", 1);//オールクリア時ジングル
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));//シューティングゲームの弾(Game02,Game04)
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));//マップチップ(Game03,Game04)
+	SOUND("SE_Bomb")->Load("Sound/SE/SE_Bomb02.wav", 10);//敵爆破SE(Game02,Game04)
+	SOUND("SE_Hit")->Load("Sound/SE/SE_Hit.wav", 3);
 
 	//-----------------------------------------------------
 	//Game01(担当:森口)
@@ -79,7 +81,7 @@ void Init(void)
 	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
 	ADD_RESOURCE("background", CImage::CreateImage("Image/Game01_background.png"));
 	SOUND("BGM_Game01")->Load("Sound/BGM/BGM_Game01.wav", 1);
-	SOUND("SE_Hit01")->Load("Sound/SE/SE_Hit_01.wav", 1);
+	SOUND("SE_Hit01")->Load("Sound/SE/SE_Hit_01.wav", 10);
 	SOUND("SE_Get01")->Load("Sound/SE/SE_Get_01.wav", 1);
 	//-----------------------------------------------------
 	//Game02(担当:林)
@@ -89,7 +91,7 @@ void Init(void)
 	ADD_RESOURCE("Effect_Bomb", CImage::CreateImage("Image/Effect_Bomb.png"));
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 
-
+	SOUND("BGM_Game02")->Load("Sound/BGM/BGM_Game02.wav",1);
 	//-----------------------------------------------------
 	//Game03(担当:小山)
 	//-----------------------------------------------------
@@ -102,7 +104,7 @@ void Init(void)
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png", effect_blood_anim_data, 128, 128));
 
 	SOUND("BGM_Game03")->Load("Sound/BGM/BGM_Game03.wav", 1);
-	SOUND("SE_EnemyDamage03")->Load("Sound/SE/SE_EnemyDamage_03.wav", 1);
+	SOUND("SE_EnemyDamage03")->Load("Sound/SE/SE_EnemyDamage_03.wav", 10);
 	SOUND("SE_PlayerDamage03")->Load("Sound/SE/SE_PlayerDamage_03.wav", 1);
 
 	//-----------------------------------------------------
@@ -110,7 +112,6 @@ void Init(void)
 	//-----------------------------------------------------
 	ADD_RESOURCE("Player04", CImage::CreateImage("Image/Player04.png"));
 	ADD_RESOURCE("Enemy04", CImage::CreateImage("Image/Enemy04.png"));
-	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	SOUND("BGM_Game04")->Load("Sound/BGM/BGM_Game04.wav", 1);
 	
 	
@@ -128,6 +129,7 @@ void Init(void)
 	ADD_RESOURCE("Result", CImage::CreateImage("Image/Result.png"));
 	ADD_RESOURCE("Anatora", CImage::CreateImage("Image/anatora.png"));
 
+	SOUND("BGM_Result")->Load("Sound/BGM/BGM_Result.wav", 1);
 	SOUND("BGM_Title")->Load("Sound/BGM/BGM_Title.wav", 1);
 	SOUND("BGM_Menu")->Load("Sound/BGM/BGM_Menu.wav", 1);
 	SOUND("SE_Button1")->Load("Sound/SE/SE_Button_Title.wav", 1);

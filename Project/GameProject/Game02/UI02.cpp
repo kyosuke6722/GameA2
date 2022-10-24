@@ -9,11 +9,11 @@ UI02::UI02() :Base(eType_UI) {
 
 void UI02::Draw() {
 	int score = GameData02::s_score;
-	for (int i = 0; i < 8; i++, score /= 10) {
+	for (int i = 0; i < 5; i++, score /= 10) {
 		int s = score % 10;
 		m_img.SetRect(16 * s, 16, 16 * s + 16, 32);
-		m_img.SetSize(16, 16);
-		m_img.SetPos(200 - 16 * i, 0);
+		m_img.SetSize(24, 24);
+		m_img.SetPos(120 - 24 * i, 0);
 		m_img.Draw();
 	}
 
@@ -37,9 +37,9 @@ void UI02::Draw() {
 		m_img.SetRect(16 * t, 16, 16 * t + 16, 32);
 		m_img.SetSize(24, 24);
 		if (i < 2)
-			m_img.SetPos(100 + 32 - 24 * i, 32);
+			m_img.SetPos(1200 + 32 - 24 * i, 0);
 		else
-			m_img.SetPos(100 + 32 - 24 * (i + 1), 32);
+			m_img.SetPos(1200 + 32 - 24 * (i + 1),0 );
 		m_img.Draw();
 	}
 

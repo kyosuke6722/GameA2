@@ -31,6 +31,7 @@ void Ball01::Update()
 
 		//ìGë§ÉSÅ[Éã
 		if (m_pos.x < 0){
+			SOUND("SE_Get01")->Play();
 			GameData01::point[1]++;
 			GameData01::t_time += 600;
 			GameData01::game_state = 0;

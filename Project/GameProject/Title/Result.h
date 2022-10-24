@@ -8,6 +8,7 @@ private:
 	CImage anatora;
 	CFont m_result_text;
 	bool m_is_tuto;
+	int m_cnt;//bgm再生用カウント
 public:
 	Result(bool tuto);
 	~Result();

@@ -15,6 +15,7 @@ Result::Result(bool tuto):Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\
 	total_time = 0;
 	anatora = COPY_RESOURCE("Anatora", CImage);
 	m_is_tuto = tuto;
+	m_cnt = 5*60;
 	if (finish_game == 4&&!m_is_tuto)//4í–Ú§”e‚µ‚½‚Æ‚«
 		SOUND("SE_AllClear")->Play();
 	else
@@ -23,6 +24,7 @@ Result::Result(bool tuto):Base(eType_Scene), m_result_text("C:\\Windows\\Fonts\\
 int Result::finish_game = 0;
 
 Result::~Result(){
+	SOUND("BGM_Result")->Pause();
 	//ƒQ[ƒ€I—¹
 	if(m_is_tuto||finish_game==4) {
 		if (Title::best_time > total_time) {
@@ -46,7 +48,13 @@ Result::~Result(){
 	}
 }
 
-void Result::Update(){
+void Result::Update() {
+	if (m_cnt >= 0) {
+		m_cnt--;
+		if (m_cnt < 0) {
+			SOUND("BGM_Result")->Play(true);
+		}
+	}
 	//enter‚ğ‰Ÿ‚·‚ÆŸ‚ÌƒQ[ƒ€‚Ö
 	if (PUSH(CInput::eButton10)) {
 		SetKill();
